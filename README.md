@@ -21,7 +21,7 @@ cmake --install-prefix $PWD/../install -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_
 
 ```
 
-Chapter2
+Chapter2 (Cpu0 Architecture and LLVM Structure)
 
 add CPU0 target https://github.com/mrzhuzhe/LLVM-12X/commit/7abbd8ae8f4b0926571f732734f3262a50106979
 
@@ -30,7 +30,7 @@ add test case https://github.com/mrzhuzhe/LLVM-12X/commit/13f78de9f0a83c355a0219
 add target implement  https://github.com/mrzhuzhe/LLVM-12X/commit/86199a22129fa655c7eb0c897ae7ab9eee667568
 
 ```
-cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_COMPILER=clang \
+cmake -DCMAKE_BUILD_TYPE=Debug --install-prefix $PWD/../install/llvm12-Cpu0 -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_COMPILER=clang \
   -DLLVM_TARGETS_TO_BUILD=Cpu0 -DLLVM_ENABLE_PROJECTS="clang" \
   -DLLVM_OPTIMIZED_TABLEGEN=On \
   -DLLVM_PARALLEL_COMPILE_JOBS=4 -DLLVM_PARALLEL_LINK_JOBS=1 ../llvm 
