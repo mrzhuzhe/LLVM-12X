@@ -41,6 +41,3 @@
 *.dwo
 build
 install
-
-llvm/lib/Target/CPU0/
-# llvm/test/CodeGen/Cpu0/
