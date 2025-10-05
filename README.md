@@ -4,15 +4,15 @@
 
 Reffer: https://jonathan2251.github.io/lbd/llvmstructure.html
 
-## Base on  
+## Intro
 
-branch origin/release/12.x
+Branch origin/release/12.x
 
-commit id e8a397203c67adbeae04763ce25c6a5ae76af52c
+Commit id e8a397203c67adbeae04763ce25c6a5ae76af52c
 
-## Build 
+## Branches 
 
-Baseline
+main(Baseline)
 
 ```
 cmake --install-prefix $PWD/../install -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_PROJECTS="clang" \
@@ -21,7 +21,7 @@ cmake --install-prefix $PWD/../install -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_
 
 ```
 
-Chapter 1
+Chapter2
 
 ```
 
