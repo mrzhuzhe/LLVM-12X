@@ -12,7 +12,7 @@ Commit id e8a397203c67adbeae04763ce25c6a5ae76af52c
 
 ## Branches 
 
-main(Baseline)
+### Baseline
 
 ```
 cmake --install-prefix $PWD/../install -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_PROJECTS="clang" \
@@ -21,13 +21,15 @@ cmake --install-prefix $PWD/../install -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_
 
 ```
 
-Chapter2 (Cpu0 Architecture and LLVM Structure)
+### Chapter2  (Cpu0 Architecture and LLVM Structure)
 
-add CPU0 target https://github.com/mrzhuzhe/LLVM-12X/commit/7abbd8ae8f4b0926571f732734f3262a50106979
 
-add test case https://github.com/mrzhuzhe/LLVM-12X/commit/13f78de9f0a83c355a02193cb35b5e1cf13d3b34
 
-add target implement  https://github.com/mrzhuzhe/LLVM-12X/commit/86199a22129fa655c7eb0c897ae7ab9eee667568
+Add CPU0 target https://github.com/mrzhuzhe/LLVM-12X/commit/7abbd8ae8f4b0926571f732734f3262a50106979
+
+Add test case https://github.com/mrzhuzhe/LLVM-12X/commit/13f78de9f0a83c355a02193cb35b5e1cf13d3b34
+
+Add target implement  https://github.com/mrzhuzhe/LLVM-12X/commit/86199a22129fa655c7eb0c897ae7ab9eee667568
 
 ```
 cmake -DCMAKE_BUILD_TYPE=Debug --install-prefix $PWD/../install/llvm12-Cpu0 -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_COMPILER=clang \
