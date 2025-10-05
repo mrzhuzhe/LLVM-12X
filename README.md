@@ -23,6 +23,12 @@ cmake --install-prefix $PWD/../install -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_
 
 Chapter2
 
+add CPU0 target https://github.com/mrzhuzhe/LLVM-12X/commit/7abbd8ae8f4b0926571f732734f3262a50106979
+
+add test case https://github.com/mrzhuzhe/LLVM-12X/commit/13f78de9f0a83c355a02193cb35b5e1cf13d3b34
+
+add target implement  https://github.com/mrzhuzhe/LLVM-12X/commit/86199a22129fa655c7eb0c897ae7ab9eee667568
+
 ```
 
 ```
