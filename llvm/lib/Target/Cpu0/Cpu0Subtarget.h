@@ -55,7 +55,7 @@ public:
   }
 
   bool hasChapter3_4() const {
-    return true;
+    return false;
   }
 
   bool hasChapter3_5() const {
