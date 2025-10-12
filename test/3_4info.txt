@@ -1,0 +1,1243 @@
+*** IR Dump Before Pre-ISel Intrinsic Lowering ***
+; ModuleID = 'ch3.bc'
+source_filename = "/home/sanszhu/Code/code/lbd/lbdex/input/ch3.cpp"
+target datalayout = "E-m:m-p:32:32-i8:8:32-i16:16:32-i64:64-n32-S64"
+target triple = "mips-unknown-linux-gnu"
+
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+
+attributes #0 = { norecurse nounwind readnone willreturn mustprogress "disable-tail-calls"="false" "frame-pointer"="none" "less-precise-fpmad"="false" "min-legal-vector-width"="0" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="mips32r2" "target-features"="+mips32r2,-noabicalls" "unsafe-fp-math"="false" "use-soft-float"="false" }
+
+!llvm.module.flags = !{!0}
+!llvm.ident = !{!1}
+
+!0 = !{i32 1, !"wchar_size", i32 4}
+!1 = !{!"clang version 12.0.1 (git@github.com:mrzhuzhe/LLVM-12X.git 1fe73083466e9c7a710c57dba7d67590d3548e1e)"}
+*** IR Dump After Pre-ISel Intrinsic Lowering ***
+; ModuleID = 'ch3.bc'
+source_filename = "/home/sanszhu/Code/code/lbd/lbdex/input/ch3.cpp"
+target datalayout = "E-m:m-p:32:32-i8:8:32-i16:16:32-i64:64-n32-S64"
+target triple = "mips-unknown-linux-gnu"
+
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+
+attributes #0 = { norecurse nounwind readnone willreturn mustprogress "disable-tail-calls"="false" "frame-pointer"="none" "less-precise-fpmad"="false" "min-legal-vector-width"="0" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="mips32r2" "target-features"="+mips32r2,-noabicalls" "unsafe-fp-math"="false" "use-soft-float"="false" }
+
+!llvm.module.flags = !{!0}
+!llvm.ident = !{!1}
+
+!0 = !{i32 1, !"wchar_size", i32 4}
+!1 = !{!"clang version 12.0.1 (git@github.com:mrzhuzhe/LLVM-12X.git 1fe73083466e9c7a710c57dba7d67590d3548e1e)"}
+*** IR Dump Before Module Verifier ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump After Module Verifier ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump Before Canonicalize natural loops ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump After Canonicalize natural loops ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump Before Merge contiguous icmps into a memcmp ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump After Merge contiguous icmps into a memcmp ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump Before Expand memcmp() to load/stores ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump After Expand memcmp() to load/stores ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump Before Lower Garbage Collection Instructions ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump After Lower Garbage Collection Instructions ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump Before Shadow Stack GC Lowering ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump After Shadow Stack GC Lowering ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump Before Lower constant intrinsics ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump After Lower constant intrinsics ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump Before Remove unreachable blocks from the CFG ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump After Remove unreachable blocks from the CFG ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump Before Constant Hoisting ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump After Constant Hoisting ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump Before Partially inline calls to library functions ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump After Partially inline calls to library functions ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump Before Instrument function entry/exit with calls to e.g. mcount() (post inlining) ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump After Instrument function entry/exit with calls to e.g. mcount() (post inlining) ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump Before Scalarize Masked Memory Intrinsics ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump After Scalarize Masked Memory Intrinsics ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump Before Expand reduction intrinsics ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump After Expand reduction intrinsics ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump Before CodeGen Prepare ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump After CodeGen Prepare ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump Before Rewrite Symbols ***
+; ModuleID = 'ch3.bc'
+source_filename = "/home/sanszhu/Code/code/lbd/lbdex/input/ch3.cpp"
+target datalayout = "E-m:m-p:32:32-i8:8:32-i16:16:32-i64:64-n32-S64"
+target triple = "mips-unknown-linux-gnu"
+
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+
+attributes #0 = { norecurse nounwind readnone willreturn mustprogress "disable-tail-calls"="false" "frame-pointer"="none" "less-precise-fpmad"="false" "min-legal-vector-width"="0" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="mips32r2" "target-features"="+mips32r2,-noabicalls" "unsafe-fp-math"="false" "use-soft-float"="false" }
+
+!llvm.module.flags = !{!0}
+!llvm.ident = !{!1}
+
+!0 = !{i32 1, !"wchar_size", i32 4}
+!1 = !{!"clang version 12.0.1 (git@github.com:mrzhuzhe/LLVM-12X.git 1fe73083466e9c7a710c57dba7d67590d3548e1e)"}
+*** IR Dump After Rewrite Symbols ***
+; ModuleID = 'ch3.bc'
+source_filename = "/home/sanszhu/Code/code/lbd/lbdex/input/ch3.cpp"
+target datalayout = "E-m:m-p:32:32-i8:8:32-i16:16:32-i64:64-n32-S64"
+target triple = "mips-unknown-linux-gnu"
+
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+
+attributes #0 = { norecurse nounwind readnone willreturn mustprogress "disable-tail-calls"="false" "frame-pointer"="none" "less-precise-fpmad"="false" "min-legal-vector-width"="0" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="mips32r2" "target-features"="+mips32r2,-noabicalls" "unsafe-fp-math"="false" "use-soft-float"="false" }
+
+!llvm.module.flags = !{!0}
+!llvm.ident = !{!1}
+
+!0 = !{i32 1, !"wchar_size", i32 4}
+!1 = !{!"clang version 12.0.1 (git@github.com:mrzhuzhe/LLVM-12X.git 1fe73083466e9c7a710c57dba7d67590d3548e1e)"}
+*** IR Dump Before Exception handling preparation ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump After Exception handling preparation ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump Before Safe Stack instrumentation pass ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump After Safe Stack instrumentation pass ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump Before Module Verifier ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+*** IR Dump After Module Verifier ***
+; Function Attrs: norecurse nounwind readnone willreturn mustprogress
+define dso_local i32 @main() local_unnamed_addr #0 {
+entry:
+  ret i32 0
+}
+# *** IR Dump Before Finalize ISel and expand pseudo-instructions ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Finalize ISel and expand pseudo-instructions ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Early Tail Duplication ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Early Tail Duplication ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Optimize machine instruction PHIs ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Optimize machine instruction PHIs ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Slot index numbering ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Slot index numbering ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  $v0 = COPY %0:gprout
+48B	  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Merge disjoint stack slots ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  $v0 = COPY %0:gprout
+48B	  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Merge disjoint stack slots ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Local Stack Slot Allocation ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Local Stack Slot Allocation ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Remove dead machine instructions ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Remove dead machine instructions ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Early Machine Loop Invariant Code Motion ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Early Machine Loop Invariant Code Motion ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Machine Common Subexpression Elimination ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Machine Common Subexpression Elimination ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Machine code sinking ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Machine code sinking ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Peephole Optimizations ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Peephole Optimizations ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Remove dead machine instructions ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Remove dead machine instructions ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Detect Dead Lanes ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Detect Dead Lanes ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Process Implicit Definitions ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Process Implicit Definitions ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Remove unreachable machine basic blocks ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Remove unreachable machine basic blocks ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Live Variable Analysis ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Live Variable Analysis ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY killed %0:gprout
+  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Eliminate PHI nodes for register allocation ***:
+# Machine code for function main: IsSSA, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY killed %0:gprout
+  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Eliminate PHI nodes for register allocation ***:
+# Machine code for function main: NoPHIs, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY killed %0:gprout
+  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Two-Address instruction pass ***:
+# Machine code for function main: NoPHIs, TracksLiveness
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY killed %0:gprout
+  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Two-Address instruction pass ***:
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY killed %0:gprout
+  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Slot index numbering ***:
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  $v0 = COPY killed %0:gprout
+  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Slot index numbering ***:
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  $v0 = COPY killed %0:gprout
+48B	  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Live Interval Analysis ***:
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  $v0 = COPY killed %0:gprout
+48B	  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Live Interval Analysis ***:
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  $v0 = COPY %0:gprout
+48B	  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Simple Register Coalescing ***:
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  $v0 = COPY %0:gprout
+48B	  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Simple Register Coalescing ***:
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  $v0 = COPY %0:gprout
+48B	  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Rename Disconnected Subregister Components ***:
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  $v0 = COPY %0:gprout
+48B	  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Rename Disconnected Subregister Components ***:
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  $v0 = COPY %0:gprout
+48B	  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Machine Instruction Scheduler ***:
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  $v0 = COPY %0:gprout
+48B	  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Machine Instruction Scheduler ***:
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  $v0 = COPY %0:gprout
+48B	  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Debug Variable Analysis ***:
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  $v0 = COPY %0:gprout
+48B	  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Debug Variable Analysis ***:
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  $v0 = COPY %0:gprout
+48B	  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Live Stack Slot Analysis ***:
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  $v0 = COPY %0:gprout
+48B	  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Live Stack Slot Analysis ***:
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  $v0 = COPY %0:gprout
+48B	  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Virtual Register Map ***:
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  $v0 = COPY %0:gprout
+48B	  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Virtual Register Map ***:
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  $v0 = COPY %0:gprout
+48B	  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Live Register Matrix ***:
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  $v0 = COPY %0:gprout
+48B	  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Live Register Matrix ***:
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  $v0 = COPY %0:gprout
+48B	  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Greedy Register Allocator ***:
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  $v0 = COPY %0:gprout
+48B	  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Greedy Register Allocator ***:
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  $v0 = COPY %0:gprout
+48B	  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Virtual Register Rewriter ***:
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  $v0 = COPY %0:gprout
+48B	  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Virtual Register Rewriter ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  $v0 = ADDiu $zero, 0
+48B	  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Stack Slot Coloring ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  $v0 = ADDiu $zero, 0
+48B	  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Stack Slot Coloring ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  $v0 = ADDiu $zero, 0
+48B	  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Machine Copy Propagation Pass ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+0B	bb.0.entry:
+16B	  $v0 = ADDiu $zero, 0
+48B	  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Machine Copy Propagation Pass ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Machine Loop Invariant Code Motion ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Machine Loop Invariant Code Motion ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Fixup Statepoint Caller Saved ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Fixup Statepoint Caller Saved ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before PostRA Machine Sink ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After PostRA Machine Sink ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Shrink Wrapping analysis ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Shrink Wrapping analysis ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Prologue/Epilogue Insertion & Frame Finalization ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Prologue/Epilogue Insertion & Frame Finalization ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Control Flow Optimizer ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Control Flow Optimizer ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Tail Duplication ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Tail Duplication ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Machine Copy Propagation Pass ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Machine Copy Propagation Pass ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump Before Post-RA pseudo instruction expansion pass ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+# *** IR Dump After Post-RA pseudo instruction expansion pass ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RET $lr
+
+# End machine code for function main.
+
+# *** IR Dump Before Post RA top-down list latency scheduler ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RET $lr
+
+# End machine code for function main.
+
+# *** IR Dump After Post RA top-down list latency scheduler ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RET $lr
+
+# End machine code for function main.
+
+# *** IR Dump Before Analyze Machine Code For Garbage Collection ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RET $lr
+
+# End machine code for function main.
+
+# *** IR Dump After Analyze Machine Code For Garbage Collection ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RET $lr
+
+# End machine code for function main.
+
+# *** IR Dump Before Branch Probability Basic Block Placement ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RET $lr
+
+# End machine code for function main.
+
+# *** IR Dump After Branch Probability Basic Block Placement ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RET $lr
+
+# End machine code for function main.
+
+# *** IR Dump Before Insert fentry calls ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RET $lr
+
+# End machine code for function main.
+
+# *** IR Dump After Insert fentry calls ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RET $lr
+
+# End machine code for function main.
+
+# *** IR Dump Before Insert XRay ops ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RET $lr
+
+# End machine code for function main.
+
+# *** IR Dump After Insert XRay ops ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RET $lr
+
+# End machine code for function main.
+
+# *** IR Dump Before Implement the 'patchable-function' attribute ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RET $lr
+
+# End machine code for function main.
+
+# *** IR Dump After Implement the 'patchable-function' attribute ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RET $lr
+
+# End machine code for function main.
+
+# *** IR Dump Before Contiguously Lay Out Funclets ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RET $lr
+
+# End machine code for function main.
+
+# *** IR Dump After Contiguously Lay Out Funclets ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RET $lr
+
+# End machine code for function main.
+
+# *** IR Dump Before StackMap Liveness Analysis ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RET $lr
+
+# End machine code for function main.
+
+# *** IR Dump After StackMap Liveness Analysis ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RET $lr
+
+# End machine code for function main.
+
+# *** IR Dump Before Live DEBUG_VALUE analysis ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RET $lr
+
+# End machine code for function main.
+
+# *** IR Dump After Live DEBUG_VALUE analysis ***:
+# Machine code for function main: NoPHIs, TracksLiveness, NoVRegs, TiedOpsRewritten
+
+bb.0.entry:
+  $v0 = ADDiu $zero, 0
+  RET $lr
+
+# End machine code for function main.
+
+	.text
+	.section .mdebug.abiO32
+	.previous
+	.file	"ch3.cpp"
+	.globl	main                            # -- Begin function main
+	.p2align	1
+	.type	main,@function
+	.ent	main                            # @main
+main:
+	.frame	$sp,0,$lr
+	.mask 	0x00000000,0
+	.set	noreorder
+	.set	nomacro
+# %bb.0:                                # %entry
+	addiu	$2, $zero, 0
+	ret	$lr
+	.set	macro
+	.set	reorder
+	.end	main
+$func_end0:
+	.size	main, ($func_end0)-main
+                                        # -- End function
+	.ident	"clang version 12.0.1 (git@github.com:mrzhuzhe/LLVM-12X.git 1fe73083466e9c7a710c57dba7d67590d3548e1e)"
+	.section	".note.GNU-stack","",@progbits
