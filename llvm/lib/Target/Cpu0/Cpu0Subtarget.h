@@ -63,11 +63,11 @@ public:
   }
 
   bool hasChapter4_1() const {
-    return false;
+    return true;
   }
 
   bool hasChapter4_2() const {
-    return false;
+    return true;
   }
 
   bool hasChapter5_1() const {
