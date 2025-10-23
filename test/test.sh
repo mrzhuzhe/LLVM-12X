@@ -9,10 +9,18 @@ bin/llc -march=cpu0 -relocation-model=pic -filetype=asm ch3.bc -o ch3.cpu0.s
 # bin/llc -march=cpu0 -relocation-model=pic -filetype=asm ch3.bc -debug-pass=Structure -o ch3.cpu0.s
 # bin/llc -march=cpu0 -relocation-model=pic -filetype=asm -print-before-all -print-after-all ch3.bc -o -    # notice this bc is compiled with O2
 
-
-
 bin/clang -target mips-unknown-linux-gnu -c /home/sanszhu/Code/code/lbd/lbdex/input/ch3_largeframe.cpp -emit-llvm -o ch3_largeframe.bc
 bin/llc -march=cpu0 -relocation-model=pic -filetype=asm ch3_largeframe.bc -o -
+
+bin/llc -march=cpu0 -relocation-model=pic -filetype=asm /home/sanszhu/Code/code/lbd/lbdex/input/ch4_math.ll -o -
+
+bin/clang -target mips-unknown-linux-gnu -c /home/sanszhu/Code/code/lbd/lbdex/input/ch4_1_addsuboverflow.cpp -emit-llvm -o ch4_1_addsuboverflow.bc
+
+bin/llc -march=cpu0 -relocation-model=pic -filetype=asm -cpu0-enable-overflow=true ch4_1_addsuboverflow.bc -o -
+
+bin/clang -target mips-unknown-linux-gnu -c /home/sanszhu/Code/code/lbd/lbdex/input/ch4_1_mult.cpp -emit-llvm -o ch4_1_mult.bc
+bin/llc -view-dag-combine1-dags -march=cpu0 -relocation-model=pic -filetype=asm ch4_1_mult.bc -o ch4_1_mult.cpu0.s
+xdot /tmp/dag._Z9test_multv-f2a6fb.dot
 
 
 #   bin/llvm-dis ch3.bc -o -
