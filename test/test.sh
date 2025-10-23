@@ -8,6 +8,12 @@ bin/clang -target mips-unknown-linux-gnu -c /home/sanszhu/Code/code/lbd/lbdex/in
 bin/llc -march=cpu0 -relocation-model=pic -filetype=asm ch3.bc -o ch3.cpu0.s
 # bin/llc -march=cpu0 -relocation-model=pic -filetype=asm ch3.bc -debug-pass=Structure -o ch3.cpu0.s
 # bin/llc -march=cpu0 -relocation-model=pic -filetype=asm -print-before-all -print-after-all ch3.bc -o -    # notice this bc is compiled with O2
- 
+
+
+
+bin/clang -target mips-unknown-linux-gnu -c /home/sanszhu/Code/code/lbd/lbdex/input/ch3_largeframe.cpp -emit-llvm -o ch3_largeframe.bc
+bin/llc -march=cpu0 -relocation-model=pic -filetype=asm ch3_largeframe.bc -o -
+
+
 #   bin/llvm-dis ch3.bc -o -
 #   bin/llc -march=cpu0 -mcpu=help
