@@ -1,2 +1,2 @@
-#define CH       CH4_1
+#define CH       CH4_2
 
