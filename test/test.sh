@@ -22,6 +22,13 @@ bin/clang -target mips-unknown-linux-gnu -c /home/sanszhu/Code/code/lbd/lbdex/in
 bin/llc -view-dag-combine1-dags -march=cpu0 -relocation-model=pic -filetype=asm ch4_1_mult.bc -o ch4_1_mult.cpu0.s
 xdot /tmp/dag._Z9test_multv-f2a6fb.dot
 
+bin/clang -target mips-unknown-linux-gnu -c /home/sanszhu/Code/code/lbd/lbdex/input/ch4_1_mod.cpp -emit-llvm -o ch4_1_mod.bc
+bin/llc -march=cpu0 -relocation-model=pic -filetype=asm ch4_1_mod.bc -debug -o -
+
+bin/clang -target mips-unknown-linux-gnu -c /home/sanszhu/Code/code/lbd/lbdex/input/ch4_1_rotate.cpp -emit-llvm -o ch4_1_rotate.bc
+llvm-dis ch4_1_rotate.bc -o -
+
+bin/llc -march=cpu0 -relocation-model=pic -filetype=asm ch4_1_rotate.bc -o -
 
 #   bin/llvm-dis ch3.bc -o -
 #   bin/llc -march=cpu0 -mcpu=help
