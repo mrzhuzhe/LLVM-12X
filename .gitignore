@@ -42,3 +42,8 @@
 build
 install
 test/test.sh
+*.bc
+*.o
+*.hex
+verilog/cpu0IIs
+verilog/cpu0Is
