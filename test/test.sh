@@ -41,5 +41,10 @@ bin/clang -target mips-unknown-linux-gnu -O2 -c -c $inpit_path/ch4_2_slt_explain
 bin/llc -march=cpu0 -mcpu=cpu032I -relocation-model=static -filetype=asm ch4_2_slt_explain.bc -o -
 bin/llc -march=cpu0 -mcpu=cpu032II -relocation-model=static -filetype=asm ch4_2_slt_explain.bc -o -
 
+# chapter 5
+bin/llc -march=cpu0 -relocation-model=pic -filetype=obj ch4_1_mod.bc -o ch4_1_mod.o
+bin/llc -march=cpu0el -relocation-model=pic -filetype=obj ch4_1_mod.bc -o ch4_1_mod.cpu0el.o
+objdump -s ch4_1_mod.cpu0el.o
+
 #   bin/llvm-dis ch3.bc -o -
 #   bin/llc -march=cpu0 -mcpu=help
