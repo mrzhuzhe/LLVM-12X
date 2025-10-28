@@ -45,4 +45,4 @@ if [ $LE == "true" ] ; then
 else
   echo "0   /* 0: big ENDIAN, 1: little ENDIAN */" > ../verilog/cpu0.config
 fi
-cat ../verilog/cpu0.config
+cat ../cpu0.config
