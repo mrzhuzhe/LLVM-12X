@@ -1,2 +1,2 @@
-#define CH       CH5_1
+#define CH       CH6_1
 
