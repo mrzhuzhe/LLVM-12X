@@ -46,5 +46,14 @@ bin/llc -march=cpu0 -relocation-model=pic -filetype=obj ch4_1_mod.bc -o ch4_1_mo
 bin/llc -march=cpu0el -relocation-model=pic -filetype=obj ch4_1_mod.bc -o ch4_1_mod.cpu0el.o
 objdump -s ch4_1_mod.cpu0el.o
 
+bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch6_1.cpp -emit-llvm -o ch6_1.bc
+bin/llc -march=cpu0 -relocation-model=static -cpu0-use-small-section=false -filetype=asm -debug ch6_1.bc -o -
+
+bin/llc -march=cpu0 -relocation-model=static -cpu0-use-small-section=true -filetype=asm -debug ch6_1.bc -o -
+bin/llc -march=cpu0 -relocation-model=pic -cpu0-use-small-section=false -filetype=asm -debug ch6_1.bc -o -
+bin/llc -march=cpu0 -relocation-model=pic -cpu0-use-small-section=true -filetype=asm -debug ch6_1.bc -o -
+
+#  https://llvm.org/docs/WritingAnLLVMBackend.html#the-selectiondag-legalize-phase
+
 #   bin/llvm-dis ch3.bc -o -
 #   bin/llc -march=cpu0 -mcpu=help
