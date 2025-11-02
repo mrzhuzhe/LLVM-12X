@@ -55,5 +55,34 @@ bin/llc -march=cpu0 -relocation-model=pic -cpu0-use-small-section=true -filetype
 
 #  https://llvm.org/docs/WritingAnLLVMBackend.html#the-selectiondag-legalize-phase
 
+
+bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch7_1_localpointer.cpp -emit-llvm -o ch7_1_localpointer.bc
+bin/llvm-dis ch7_1_localpointer.bc -o -
+
+bin/llc -march=cpu0 -relocation-model=pic -filetype=asm ch7_1_localpointer.bc -o -
+
+bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch7_1_char_in_struct.cpp -emit-llvm -o ch7_1_char_in_struct.bc
+bin/llvm-dis ch7_1_char_in_struct.bc -o -
+
+bin/llc -march=cpu0 -relocation-model=pic -filetype=asm ch7_1_char_in_struct.bc -o -
+bin/llc -march=cpu0 -relocation-model=static -filetype=asm ch7_1_char_short.bc -o -
+
+bin/llvm-dis ch7_1_char_short.bc -o -
+
+bin/llc -march=cpu0 -relocation-model=pic -filetype=asm $inpit_path/ch7_1_bool2.ll -o -
+bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch7_1_longlong.cpp -emit-llvm -o ch7_1_longlong.bc
+bin/llc -march=cpu0 -mcpu=cpu032I -relocation-model=pic -filetype=asm ch7_1_longlong.bc -o -
+
+bin/clang -target mips-unknown-linux-gnu -emit-llvm -S $inpit_path/ch7_1_fmul.c
+
+bin/llc -march=cpu0 ch7_1_fmul.ll -relocation-model=static -o -
+# bin/llc -march=cpu0 -relocation-model=static -filetype=asm $inpit_path/ch7_1_globalstructoffset.bc -o -
+# bin/llc -march=cpu0 -debug -relocation-model=static -filetype=asm ch6_2.bc -o ch6_2.cpu0.static.s
+
+bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch7_1_vector.cpp -emit-llvm -o ch7_1_vector.bc
+bin/llvm-dis ch7_1_vector.bc -o -
+
+bin/llc -march=cpu0 -mcpu=cpu032II -relocation-model=pic -filetype=asm ch7_1_vector.bc -o -
+
 #   bin/llvm-dis ch3.bc -o -
 #   bin/llc -march=cpu0 -mcpu=help
