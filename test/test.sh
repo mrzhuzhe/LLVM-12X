@@ -84,5 +84,13 @@ bin/llvm-dis ch7_1_vector.bc -o -
 
 bin/llc -march=cpu0 -mcpu=cpu032II -relocation-model=pic -filetype=asm ch7_1_vector.bc -o -
 
+bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch8_1_1.cpp -emit-llvm -o ch8_1_1.bc
+bin/llc -march=cpu0 -mcpu=cpu032I -relocation-model=pic -filetype=asm ch8_1_1.bc -o -
+
+bin/llc -march=cpu0 -mcpu=cpu032I -relocation-model=pic -filetype=obj ch8_1_1.bc -o ch8_1_1.cpu0.o
+hexdump ch8_1_1.cpu0.o
+
+bin/llc -march=cpu0 -mcpu=cpu032II -relocation-model=pic -filetype=asm ch8_1_1.bc -o -
+
 #   bin/llvm-dis ch3.bc -o -
 #   bin/llc -march=cpu0 -mcpu=help
