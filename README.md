@@ -38,3 +38,6 @@ cmake -DCMAKE_BUILD_TYPE=Debug --install-prefix $PWD/../install/llvm12-Cpu0 -DCM
   -DLLVM_PARALLEL_COMPILE_JOBS=4 -DLLVM_PARALLEL_LINK_JOBS=1 ../llvm 
 
 ```
+
+### todo add 
+a custom pattern ISA for llvm
