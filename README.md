@@ -39,5 +39,7 @@ cmake -DCMAKE_BUILD_TYPE=Debug --install-prefix $PWD/../install/llvm12-Cpu0 -DCM
 
 ```
 
-### todo add 
-a custom pattern ISA for llvm
+### todo 
+1. add a custom pattern ISA for llvm like fma 
+2. add a options
+3. add a custom pass
