@@ -1,4 +1,8 @@
 export inpit_path=/home/sanszhu/Code/code/lbd/lbdex/input
+
+#   bin/llvm-dis ch3.bc -o -
+#   bin/llc -march=cpu0 -mcpu=help
+
 bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch3.cpp -emit-llvm -o ch3.bc
 
 #  chapter 2 error Could not allocate target machine!
@@ -92,5 +96,14 @@ hexdump ch8_1_1.cpu0.o
 
 bin/llc -march=cpu0 -mcpu=cpu032II -relocation-model=pic -filetype=asm ch8_1_1.bc -o -
 
-#   bin/llvm-dis ch3.bc -o -
-#   bin/llc -march=cpu0 -mcpu=help
+bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch8_2_longbranch.cpp -emit-llvm -o ch8_2_longbranch.bc
+bin/llvm-dis ch8_2_longbranch.bc -o -
+bin/llc -march=cpu0 -mcpu=cpu032II -relocation-model=pic -filetype=asm -force-cpu0-long-branch ch8_2_longbranch.bc -o -
+
+bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch8_2_deluselessjmp.cpp -emit-llvm -o ch8_2_deluselessjmp.bc
+bin/llc -march=cpu0 -relocation-model=static -filetype=asm -stats ch8_2_deluselessjmp.bc -o -
+# -enable-cpu0-del-useless-jmp=fals
+
+bin/clang -O1 -target mips-unknown-linux-gnu -c $inpit_path/ch8_2_select.cpp -emit-llvm -o ch8_2_select.bc
+bin/llvm-dis ch8_2_select.bc -o -
+bin/llc -march=cpu0 -mcpu=cpu032I -relocation-model=static -filetype=asm ch8_2_select.bc -o -

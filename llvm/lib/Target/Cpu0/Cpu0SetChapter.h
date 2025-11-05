@@ -1,2 +1,2 @@
-#define CH       CH8_1
+#define CH       CH8_2
 
