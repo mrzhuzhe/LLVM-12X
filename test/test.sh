@@ -107,3 +107,14 @@ bin/llc -march=cpu0 -relocation-model=static -filetype=asm -stats ch8_2_delusele
 bin/clang -O1 -target mips-unknown-linux-gnu -c $inpit_path/ch8_2_select.cpp -emit-llvm -o ch8_2_select.bc
 bin/llvm-dis ch8_2_select.bc -o -
 bin/llc -march=cpu0 -mcpu=cpu032I -relocation-model=static -filetype=asm ch8_2_select.bc -o -
+
+bin/clang -O1 -target mips-unknown-linux-gnu -c $inpit_path/ch8_2_select_global_pic.cpp -emit-llvm -o ch8_2_select_global_pic.bc
+bin/llvm-dis ch8_2_select_global_pic.bc -o -
+bin/llc -march=cpu0 -mcpu=cpu032I -relocation-model=pic -filetype=asm ch8_2_select_global_pic.bc -o -
+
+bin/clang -O3 -target mips-unknown-linux-gnu -c $inpit_path/ch8_2_phinode.cpp -emit-llvm -o ch8_2_phinode.bc
+bin/llvm-dis ch8_2_phinode.bc -o -
+
+
+clang -target mips-unknown-linux-gnu -c $inpit_path/ch9_1.cpp -emit-llvm -o ch9_1.bc
+llc -march=mips -relocation-model=pic -filetype=asm ch9_1.bc -o ch9_1.mips.s
