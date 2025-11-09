@@ -138,3 +138,10 @@ bin/llc -march=cpu0 -mcpu=cpu032II -cpu0-s32-calls=true -relocation-model=static
 bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch9_1_struct.cpp -emit-llvm -o ch9_1_struct.bc
 bin/llc -march=cpu0 -mcpu=cpu032I -relocation-model=pic -filetype=asm ch9_1_struct.bc -o -
 
+bin/clang -O1 -target mips-unknown-linux-gnu -c $inpit_path/ch9_2_tailcall.cpp -emit-llvm -o ch9_2_tailcall.bc
+bin/llvm-dis ch9_2_tailcall.bc -o -
+bin/llc -march=cpu0 -mcpu=cpu032II -relocation-model=static -filetype=asm -enable-cpu0-tail-calls ch9_2_tailcall.bc -stats -o -
+
+bin/llc -march=cpu0 -mcpu=cpu032I -relocation-model=static -filetype=asm ch9_2_tailcall.bc -o -
+
+
