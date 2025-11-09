@@ -144,4 +144,38 @@ bin/llc -march=cpu0 -mcpu=cpu032II -relocation-model=static -filetype=asm -enabl
 
 bin/llc -march=cpu0 -mcpu=cpu032I -relocation-model=static -filetype=asm ch9_2_tailcall.bc -o -
 
+# more args
+bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch9_3_vararg.cpp -emit-llvm -o ch9_3_vararg.bc
+bin/llc -march=cpu0 -relocation-model=pic -filetype=asm ch9_3_vararg.bc -o -
+
+bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch9_3_alloc.cpp -emit-llvm -o ch9_3_alloc.bc
+bin/llc -march=cpu0 -mcpu=cpu032I -cpu0-s32-calls=false -relocation-model=pic -filetype=asm ch9_3_alloc.bc -o -
+
+bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch9_gprestore.cpp -emit-llvm -o ch9_gprestore.bc
+bin/llc -march=cpu0 -mcpu=cpu032II-cpu0-s32-calls=true -relocation-model=pic -filetype=asm ch9_gprestore.bc -o -
+bin/llc -march=cpu0 -mcpu=cpu032II-cpu0-s32-calls=true -relocation-model=pic -filetype=asm ch9_gprestore.bc -cpu0-no-cpload -cpu0-reserve-gp -o -
+bin/llc -march=mips -relocation-model=pic -filetype=asm ch9_gprestore.bc -o -
+bin/llc -march=cpu0 -relocation-model=pic -filetype=obj ch9_1.bc -o ch9_1.cpu0.o
+
+hexdump  ch9_1.cpu0.o
+cat ch9_1.cpu0.s
+
+llvm-dis ch9_3_alloc.bc -o ch9_3_alloc.ll
+bin/llc -march=cpu0 -mcpu=cpu032I -cpu0-s32-calls=false -relocation-model=pic -filetype=asm ch9_3_alloc.bc -o ch9_3_alloc.cpu0.s
+cat ch9_3_alloc.cpu0.s
+
+bin/clang -O0 -target mips-unknown-linux-gnu -c $inpit_path/ch9_3_longlongshift.cpp -emit-llvm -o ch9_3_longlongshift.bc
+bin/llvm-dis ch9_3_longlongshift.bc -o -
+
+bin/llc -march=cpu0 -mcpu=cpu032I -relocation-model=static -filetype=asm ch9_3_longlongshift.bc -o -
+bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch9_3_stacksave.cpp -emit-llvm -o ch9_3_stacksave.bc
+bin/llvm-dis ch9_3_stacksave.bc -o -
+bin/llc -march=cpu0 -mcpu=cpu032I -relocation-model=static -filetype=asm ch9_3_stacksave.bc -o -
+
+bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch9_3_frame_return_addr.cpp -emit-llvm -o ch9_3_frame_return_addr.bc
+bin/llvm-dis ch9_3_frame_return_addr.bc -o -
+bin/llc -march=cpu0 -relocation-model=static -filetype=asm ch9_3_frame_return_addr.bc -o -
+
+bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch9_3_detect_exception.cpp -emit-llvm -o ch9_3_detect_exception.bc
+bin/llvm-dis ch9_3_detect_exception.bc -o -
 
