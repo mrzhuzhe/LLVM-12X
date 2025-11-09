@@ -116,5 +116,25 @@ bin/clang -O3 -target mips-unknown-linux-gnu -c $inpit_path/ch8_2_phinode.cpp -e
 bin/llvm-dis ch8_2_phinode.bc -o -
 
 
-clang -target mips-unknown-linux-gnu -c $inpit_path/ch9_1.cpp -emit-llvm -o ch9_1.bc
+bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch9_1.cpp -emit-llvm -o ch9_1.bc
 llc -march=mips -relocation-model=pic -filetype=asm ch9_1.bc -o ch9_1.mips.s
+
+bin/clang -O3 -target mips-unknown-linux-gnu -c $inpit_path/ch9_incoming.cpp -emit-llvm -o ch9_incoming.bc
+bin/llvm-dis ch9_incoming.bc -o -
+bin/llc -march=cpu0 -relocation-model=pic -filetype=asm ch9_1.bc -o ch9_1.cpu0.s
+
+bin/clang -O3 -target mips-unknown-linux-gnu -c $inpit_path/ch9_outgoing.cpp -emit-llvm -o ch9_outgoing.bc
+bin/llvm-dis ch9_outgoing.bc -o -
+
+bin/llc -march=cpu0 -mcpu=cpu032I -view-dag-combine1-dags -relocation-model=static -filetype=asm ch9_outgoing.bc -o -
+bin/llc -march=cpu0 -mcpu=cpu032I -cpu0-s32-calls=true -relocation-model=pic -filetype=asm ch9_1.bc -o -
+bin/llc -march=cpu0 -mcpu=cpu032II -cpu0-s32-calls=false -relocation-model=pic -filetype=asm ch9_1.bc -o -
+
+bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch9_1_2.cpp -emit-llvm -o ch9_1_2.bc
+llvm-dis ch9_1_2.bc -o - 
+bin/llc -march=cpu0 -mcpu=cpu032II -cpu0-s32-calls=true -relocation-model=static -filetype=asm ch9_1_2.bc -o -
+bin/llc -march=cpu0 -mcpu=cpu032II -cpu0-s32-calls=true -relocation-model=static -filetype=asm ch9_1_2.bc -debug -o -
+
+bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch9_1_struct.cpp -emit-llvm -o ch9_1_struct.bc
+bin/llc -march=cpu0 -mcpu=cpu032I -relocation-model=pic -filetype=asm ch9_1_struct.bc -o -
+
