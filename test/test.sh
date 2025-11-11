@@ -179,3 +179,5 @@ bin/llc -march=cpu0 -relocation-model=static -filetype=asm ch9_3_frame_return_ad
 bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch9_3_detect_exception.cpp -emit-llvm -o ch9_3_detect_exception.bc
 bin/llvm-dis ch9_3_detect_exception.bc -o -
 
+llvm-readelf -s ch9_1.cpu0.o 
+llvm-readelf -tr ch9_1.cpu0.o 
