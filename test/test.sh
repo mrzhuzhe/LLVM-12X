@@ -181,3 +181,16 @@ bin/llvm-dis ch9_3_detect_exception.bc -o -
 
 llvm-readelf -s ch9_1.cpu0.o 
 llvm-readelf -tr ch9_1.cpu0.o 
+llvm-readelf -h ch9_1.cpu0.o
+llvm-readelf -l ch9_1.cpu0.o
+llvm-readelf -S ch9_1.cpu0.o
+
+bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch9_1.cpp -emit-llvm -o ch9_1.bc
+bin/llc -march=cpu0 -relocation-model=pic -filetype=asm ch9_1.bc -o ch9_1.cpu0.s 
+cat ch9_1.cpu0.s
+
+bin/llc -march=cpu0 -relocation-model=pic -filetype=obj ch9_1.bc -o ch9_1.cpu0.o
+llvm-objdump -s ch9_1.cpu0.o
+
+bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch9_3.cpp -emit-llvm -o ch9_3.bc
+
