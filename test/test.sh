@@ -200,3 +200,6 @@ bin/llc -march=cpu0 -relocation-model=pic -filetype=obj ch11_1.bc -o ch11_1.cpu0
 bin/llvm-objdump -d ch11_1.cpu0.o
 
 bin/llc -march=cpu0 -relocation-model=pic -filetype=obj -debug-only=asm-matcher,cpu0-asm-parser ch11_1.bc -o ch11_1.cpu0.o
+
+bin/clang -target mips-unknown-linux-gnu -c ch11_2.cpp -emit-llvm -o ch11_2.bc
+bin/llc -march=cpu0 -relocation-model=static -filetype=asm ch11_2.bc -o -

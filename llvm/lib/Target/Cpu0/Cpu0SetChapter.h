@@ -1,2 +1,2 @@
-#define CH       CH11_1
+#define CH       CH11_2
 
