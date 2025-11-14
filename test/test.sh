@@ -194,3 +194,9 @@ llvm-objdump -s ch9_1.cpu0.o
 
 bin/clang -target mips-unknown-linux-gnu -c $inpit_path/ch9_3.cpp -emit-llvm -o ch9_3.bc
 
+bin/clang -c $inpit_path/ch11_1.cpp -emit-llvm -o ch11_1.bc
+bin/llc -march=cpu0 -relocation-model=pic -filetype=obj ch11_1.bc -o ch11_1.cpu0.o
+
+bin/llvm-objdump -d ch11_1.cpu0.o
+
+bin/llc -march=cpu0 -relocation-model=pic -filetype=obj -debug-only=asm-matcher,cpu0-asm-parser ch11_1.bc -o ch11_1.cpu0.o
