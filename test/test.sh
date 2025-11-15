@@ -203,3 +203,22 @@ bin/llc -march=cpu0 -relocation-model=pic -filetype=obj -debug-only=asm-matcher,
 
 bin/clang -target mips-unknown-linux-gnu -c ch11_2.cpp -emit-llvm -o ch11_2.bc
 bin/llc -march=cpu0 -relocation-model=static -filetype=asm ch11_2.bc -o -
+
+# cxx exception handler https://itanium-cxx-abi.github.io/cxx-abi/exceptions.pdf
+# https://llvm.org/docs/ExceptionHandling.html
+
+bin/clang -c ch12_eh.cpp -emit-llvm -o ch12_eh.bc
+bin/llvm-dis ch12_eh.bc -o -
+bin/llc -march=cpu0 -relocation-model=static -filetype=asm ch12_eh.bc -o -
+
+# thread local
+bin/clang -target mips-unknown-linux-gnu -c ch12_thread_var.cpp -emit-llvm -std=c++11 -o ch12_thread_var.bc
+bin/llvm-dis ch12_thread_var.bc -o -
+
+bin/llc -march=cpu0 -relocation-model=pic -filetype=asm ch12_thread_var.bc -o ch12_thread_var.cpu0.pic.s
+cat ch12_thread_var.cpu0.pic.s
+
+bin/llc -march=cpu0 -relocation-model=static -filetype=asm ch12_thread_var.bc -o ch12_thread_var.cpu0.static.s
+cat ch12_thread_var.cpu0.static.s
+
+# atomic 
