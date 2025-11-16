@@ -41,5 +41,9 @@ cmake -DCMAKE_BUILD_TYPE=Debug --install-prefix $PWD/../install/llvm12-Cpu0 -DCM
 
 ### Todos
 1. add a custom pattern ISA for llvm like fma 
-2. add a options
-3. add a custom pass
+  vectorize is in SelectionDAG Legalize Phase
+  fma is in SelectionDAG Select Phase
+2. add a options 
+3. add a custom pass 
+4. why not llvm for viual machine like V8
+
