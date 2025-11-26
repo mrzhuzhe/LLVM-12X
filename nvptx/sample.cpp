@@ -5,6 +5,7 @@
 
 
 void checkCudaErrors(CUresult err) {
+  std::cout << err << std::endl;
   assert(err == CUDA_SUCCESS);
 }
 
@@ -35,7 +36,7 @@ int main(int argc, char **argv) {
     return 1;
   }
 
-  std::ifstream t("kernel_example.ptx");
+  std::ifstream t("kernel.ptx");
   if (!t.is_open()) {
     std::cerr << "kernel.ptx not found\n";
     return 1;
@@ -50,7 +51,7 @@ int main(int argc, char **argv) {
   checkCudaErrors(cuModuleLoadDataEx(&cudaModule, str.c_str(), 0, 0, 0));
 
   // Get kernel function
-  checkCudaErrors(cuModuleGetFunction(&function, cudaModule, "kernel"));
+  checkCudaErrors(cuModuleGetFunction(&function, cudaModule, "_Z6VecAddPfS_S_"));
 
   // Device data
   CUdeviceptr devBufferA;

@@ -12,6 +12,8 @@
 
 	// .globl	_Z6VecAddPfS_S_
 
+
+//kernel.cu:3 __global__ void VecAdd(float* A, float* B, float* C)
 .visible .entry _Z6VecAddPfS_S_(
 	.param .u64 _Z6VecAddPfS_S__param_0,
 	.param .u64 _Z6VecAddPfS_S__param_1,

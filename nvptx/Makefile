@@ -1,7 +1,7 @@
 cuda_path=/opt/cuda
 all:
 #	clang++	-S kernel.cu --cuda-gpu-arch=sm_70 --cuda-path=${cuda_path} -emit-llvm -v
-	${cuda_path}/bin/nvcc --ptx kernel.cu 
+	${cuda_path}/bin/nvcc --ptx kernel.cu --source-in-ptx
 	clang++ sample.cpp -o sample.o -g -I${cuda_path}/include -lcuda
 
 asm:
