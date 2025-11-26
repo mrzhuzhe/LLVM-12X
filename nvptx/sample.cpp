@@ -5,7 +5,7 @@
 
 
 void checkCudaErrors(CUresult err) {
-  std::cout << err << std::endl;
+  // std::cout << err << std::endl;
   assert(err == CUDA_SUCCESS);
 }
 
@@ -51,7 +51,7 @@ int main(int argc, char **argv) {
   checkCudaErrors(cuModuleLoadDataEx(&cudaModule, str.c_str(), 0, 0, 0));
 
   // Get kernel function
-  checkCudaErrors(cuModuleGetFunction(&function, cudaModule, "_Z6VecAddPfS_S_"));
+  checkCudaErrors(cuModuleGetFunction(&function, cudaModule, "VecAdd"));
 
   // Device data
   CUdeviceptr devBufferA;
