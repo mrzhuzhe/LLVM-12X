@@ -35,7 +35,7 @@ int main(int argc, char **argv) {
     return 1;
   }
 
-  std::ifstream t("kernel.ptx");
+  std::ifstream t("kernel_example.ptx");
   if (!t.is_open()) {
     std::cerr << "kernel.ptx not found\n";
     return 1;
@@ -44,7 +44,7 @@ int main(int argc, char **argv) {
                     std::istreambuf_iterator<char>());
 
   // Create driver context
-  checkCudaErrors(cuCtxCreate(&context, 0, device));
+  checkCudaErrors(cuCtxCreate(&context, NULL, 0, device));
 
   // Create module for object
   checkCudaErrors(cuModuleLoadDataEx(&cudaModule, str.c_str(), 0, 0, 0));
