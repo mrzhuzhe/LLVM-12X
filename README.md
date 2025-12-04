@@ -46,4 +46,6 @@ cmake -DCMAKE_BUILD_TYPE=Debug --install-prefix $PWD/../install/llvm12-Cpu0 -DCM
 2. add a options 
 3. add a custom pass 
 4. why not llvm for viual machine like V8
+5. tablegen return
+6. support double 
 
