@@ -5,4 +5,4 @@ all:
 test:
 	../../build/bin/llc -march=cpu0 -relocation-model=pic -filetype=asm fma.ll -o -
 debug:
-	gdb --args ../../build/bin/llc -march=cpu0 -relocation-model=pic -filetype=asm fma.ll -o -
+	gdb --ex "b Cpu0DAGToDAGISel::Select" --args ../../build/bin/llc -march=cpu0 -debug -relocation-model=pic -filetype=asm fma.ll -o -
