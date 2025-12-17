@@ -10,14 +10,14 @@
 .target sm_75
 .address_size 64
 
-	// .globl	VecAdd
+	// .globl	VecAdd(float *, float *, float *)
 
 
-//kernel.cu:3 extern "C" __global__ void VecAdd(float* A, float* B, float* C)
-.visible .entry VecAdd(
-	.param .u64 VecAdd_param_0,
-	.param .u64 VecAdd_param_1,
-	.param .u64 VecAdd_param_2
+//kernel.cu:3 __global__ void VecAdd(float* A, float* B, float* C)
+.visible .entry VecAdd(float *, float *, float *)(
+	.param .u64 _Z6VecAddPfS_S__param_0,
+	.param .u64 _Z6VecAddPfS_S__param_1,
+	.param .u64 _Z6VecAddPfS_S__param_2
 )
 {
 	.reg .f32 	%f<4>;
@@ -25,9 +25,9 @@
 	.reg .b64 	%rd<11>;
 
 
-	ld.param.u64 	%rd1, [VecAdd_param_0];
-	ld.param.u64 	%rd2, [VecAdd_param_1];
-	ld.param.u64 	%rd3, [VecAdd_param_2];
+	ld.param.u64 	%rd1, [_Z6VecAddPfS_S__param_0];
+	ld.param.u64 	%rd2, [_Z6VecAddPfS_S__param_1];
+	ld.param.u64 	%rd3, [_Z6VecAddPfS_S__param_2];
 	cvta.to.global.u64 	%rd4, %rd3;
 	cvta.to.global.u64 	%rd5, %rd2;
 	cvta.to.global.u64 	%rd6, %rd1;
