@@ -11,3 +11,9 @@ genInpx86:
 	clang -S input/type.c -emit-llvm -o input/typex86.ll
 testx86:
 	llc -march=x86 -filetype=asm input/typex86.ll -o input/typex-x86.s
+# https://alammori.com/basics/floating-point-hardware-implementation
+genInpMips:
+	${bin_path}/clang --target=mips -S input/type.c -emit-llvm -o input/typeMips.ll
+
+testMips:
+	${bin_path}/llc -march=mips -relocation-model=pic -filetype=asm input/typeMips.ll -o input/type-mips.s
