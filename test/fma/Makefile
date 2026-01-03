@@ -17,3 +17,7 @@ genInpMips:
 
 testMips:
 	${bin_path}/llc -march=mips -relocation-model=pic -filetype=asm input/typeMips.ll -o input/type-mips.s
+
+testinit:
+	${bin_path}/clang -S input/init.c -emit-llvm -o input/init.ll
+	${bin_path}/llc -march=cpu0 -debug -filetype=asm input/init.ll -o input/init.s

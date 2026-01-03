@@ -272,6 +272,7 @@ void Cpu0AsmPrinter::emitFunctionBodyStart() {
   if (Cpu0NoCpload)
     EmitCPLoad = false;
 
+  OutStreamer->emitRawText(StringRef("\t.set\tzztest"));
   if (OutStreamer->hasRawTextSupport()) {
     SmallString<128> Str;
     raw_svector_ostream OS(Str);

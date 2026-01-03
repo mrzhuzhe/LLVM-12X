@@ -9,6 +9,7 @@
 main:
 	.cfi_startproc
 	.frame	$fp,40,$lr
+	.set	zztest
 	.mask 	0x00005200,-4
 	.set	noreorder
 	.set	nomacro
