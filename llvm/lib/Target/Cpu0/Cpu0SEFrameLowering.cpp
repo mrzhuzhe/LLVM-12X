@@ -69,11 +69,12 @@ void Cpu0SEFrameLowering::emitPrologue(MachineFunction &MF,
   unsigned CFIIndex = 
       MF.addFrameInst(
       MCCFIInstruction::cfiDefCfaOffset(nullptr, StackSize));
-  // BuildMI(MBB, MBBI, dl, TII.get(TargetOpcode::CFI_INSTRUCTION))
-  //     .addCFIIndex(CFIIndex);
-  // zz test
   BuildMI(MBB, MBBI, dl, TII.get(TargetOpcode::CFI_INSTRUCTION))
       .addCFIIndex(CFIIndex);
+  // zz test
+  int64_t zz_test = 8;
+  // BuildMI(MBB, MBBI, dl, TII.get(Cpu0::ADDu), ZERO).addImm(zz_test)
+  //     .addReg(ZERO);
 
   const std::vector<CalleeSavedInfo> &CSI = MFI.getCalleeSavedInfo();
 

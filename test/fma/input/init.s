@@ -16,6 +16,7 @@ main:
 # %bb.0:                                # %entry
 	addiu	$sp, $sp, -8
 	.cfi_def_cfa_offset 8
+	addu	$zero, 8, $zero
 	st	$fp, 4($sp)                     # 4-byte Folded Spill
 	.cfi_offset 12, -4
 	move	$fp, $sp
@@ -34,5 +35,5 @@ $func_end0:
 	.size	main, ($func_end0)-main
 	.cfi_endproc
                                         # -- End function
-	.ident	"clang version 12.0.1 (git@github.com:mrzhuzhe/LLVM-12X.git d04b3c213099dd0806fc7261ac1dac6968a67a66)"
+	.ident	"clang version 12.0.1 (git@github.com:mrzhuzhe/LLVM-12X.git 5e630f6c7fa4722cbb36ad7e676020935b96ef95)"
 	.section	".note.GNU-stack","",@progbits
