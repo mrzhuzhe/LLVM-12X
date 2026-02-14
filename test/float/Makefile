@@ -6,7 +6,16 @@ test:
 compare:
 	../../build/bin/clang -S -emit-llvm compare.c -o outputs/compare.ll
 	../../build/bin/llc -march=cpu0 -relocation-model=pic -filetype=asm outputs/compare.ll -o outputs/compare.s
+
+comparefunction:
+	../../build/bin/clang -S -emit-llvm comparefunction.c -o outputs/comparefunction.ll
+	../../build/bin/llc -march=cpu0 -relocation-model=pic -filetype=asm outputs/comparefunction.ll -o outputs/comparefunction.s
+
 golden:
 	llc -march=x86 -O0 -filetype=asm outputs/fma.ll -o outputs/golden.s
+
+goldenfunction:
+	llc -march=x86 -O0 -filetype=asm outputs/comparefunction.ll -o outputs/goldenfunction.s
+
 debug:
 	gdb --ex "b Cpu0DAGToDAGISel::Select" --args ../../build/bin/llc -march=cpu0 -debug -relocation-model=pic -filetype=asm outputs/fma.ll -o -
