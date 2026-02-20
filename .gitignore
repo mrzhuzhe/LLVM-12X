@@ -47,6 +47,4 @@ test/test.sh
 *.hex
 verilog/cpu0IIs
 verilog/cpu0Is
-test/input/*.ll
-test/input/*.txt
 outputs
