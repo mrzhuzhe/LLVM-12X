@@ -18,4 +18,6 @@ goldenfunction:
 	llc -march=x86 -O0 -filetype=asm outputs/comparefunction.ll -o outputs/goldenfunction.s
 
 debug:
-	gdb --ex "b Cpu0DAGToDAGISel::Select" --args ../../build/bin/llc -march=cpu0 -debug -relocation-model=pic -filetype=asm outputs/fma.ll -o -
+	gdb --ex "b Cpu0DAGToDAGISel::Select" \
+	--ex "b Cpu0SEISelDAGToDAG.cpp:49" \
+	--args ../../build/bin/llc -march=cpu0 -debug -relocation-model=pic -filetype=asm outputs/fma.ll -o outputs/fma.s

@@ -135,7 +135,8 @@ Cpu0Subtarget::initializeSubtargetDependencies(StringRef CPU, StringRef FS,
 
 bool Cpu0Subtarget::abiUsesSoftFloat() const {
 //  return TM->Options.UseSoftFloat;
-  return true;
+  //return true;
+  return false;
 }
 
 const Cpu0ABIInfo &Cpu0Subtarget::getABI() const { return TM.getABI(); }

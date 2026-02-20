@@ -1146,7 +1146,8 @@ static bool CC_Cpu0O32(unsigned ValNo, MVT ValVT, MVT LocVT,
   // f32 and f64 are allocated in A0, A1 when either of the following
   // is true: function is vararg, argument is 3rd or higher, there is previous
   // argument which is not f32 or f64.
-  bool AllocateFloatsInIntReg = true;
+  //bool AllocateFloatsInIntReg = true;
+  bool AllocateFloatsInIntReg = false;
   Align OrigAlign = ArgFlags.getNonZeroOrigAlign();
   bool isI64 = (ValVT == MVT::i32 && OrigAlign == 8);
 
