@@ -20,4 +20,5 @@ goldenfunction:
 debug:
 	gdb --ex "b Cpu0DAGToDAGISel::Select" \
 	--ex "b Cpu0SEISelDAGToDAG.cpp:49" \
+	--ex "b Cpu0ISelLowering.cpp:100" \
 	--args ../../build/bin/llc -march=cpu0 -debug -relocation-model=pic -filetype=asm outputs/fma.ll -o outputs/fma.s

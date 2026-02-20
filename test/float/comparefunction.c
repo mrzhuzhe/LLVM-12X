@@ -4,13 +4,13 @@
 */
 #include "stdio.h"
 
-int func1(int a, int b){
+int func1(float a, float b){
     return a*b;
 }
 int main(){
 
-    int a = 11; 
-    int b = 22;
+    float a = 11; 
+    float b = 22;
     // int d = 33;
     // int e = 44;
     int c = func1(a, b);
