@@ -19,6 +19,10 @@ goldenfunction:
 
 debug:
 	gdb --ex "b Cpu0DAGToDAGISel::Select" \
-	--ex "b Cpu0SEISelDAGToDAG.cpp:49" \
-	--ex "b Cpu0ISelLowering.cpp:100" \
+	gdb --ex "b LegalizeFloatTypes.cpp:801" \
+	gdb --ex "b LegalizeFloatTypes.cpp:49" \
 	--args ../../build/bin/llc -march=cpu0 -debug -relocation-model=pic -filetype=asm outputs/fma.ll -o outputs/fma.s
+
+MIPS:
+	gdb --ex "b MipsFastISel::selectLoad" \
+	--args ../../build/bin/llc -march=mips -debug -relocation-model=pic -filetype=asm outputs/fma.ll -o outputs/fma-mips.s
