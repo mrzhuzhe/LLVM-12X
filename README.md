@@ -48,4 +48,5 @@ cmake -DCMAKE_BUILD_TYPE=Debug --install-prefix $PWD/../install/llvm12-Cpu0 -DCM
 4. why not llvm for viual machine like V8 (trivial)
 5. tablegen return
 6. support double / float , mips use fast-isel
+  reffer: https://inside-compiler.github.io/
 

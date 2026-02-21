@@ -26,3 +26,4 @@ debug:
 MIPS:
 	gdb --ex "b MipsFastISel::selectLoad" \
 	--args ../../build/bin/llc -march=mips -debug -relocation-model=pic -filetype=asm outputs/fma.ll -o outputs/fma-mips.s
+# MIPS online pipline analysis https://godbolt.org/z/qYKx56eh6
