@@ -43,9 +43,9 @@ cmake -DCMAKE_BUILD_TYPE=Debug --install-prefix $PWD/../install/llvm12-Cpu0 -DCM
 1. add a custom pattern ISA for llvm like fma 
   vectorize is in SelectionDAG Legalize Phase
   fma is in SelectionDAG Select Phase
-2. add a options 
-3. add a custom pass 
-4. why not llvm for viual machine like V8
+2. add a options (ok)
+3. add a custom pass (ok)
+4. why not llvm for viual machine like V8 (trivial)
 5. tablegen return
-6. support double 
+6. support double / float , mips use fast-isel
 
