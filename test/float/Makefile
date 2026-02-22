@@ -27,5 +27,12 @@ MIPS:
 	--args ../../build/bin/llc -march=mips -debug -relocation-model=pic -filetype=asm outputs/fma.ll -o outputs/fma-mips.s
 # MIPS online pipline analysis https://godbolt.org/z/qYKx56eh6
 
-test:
+testMIR:
 	../../build/bin/llc -debug-pass=Structure -stop-after=machine-cp -march=cpu0 -debug -relocation-model=pic -filetype=asm outputs/fma.ll -o -
+
+# --view-legaliz-types-dags
+# https://myhsu.xyz/llvm-codegen-legalization/
+testLegalize:
+	../../build/bin/llc \
+	--view-legalize-dags \
+	-march=cpu0 -debug -relocation-model=pic -filetype=asm outputs/fma.ll -o -
