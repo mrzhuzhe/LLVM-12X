@@ -1,0 +1,2058 @@
+Args: ../../build/bin/llc -debug-pass=Structure -stop-after=machine-cp -march=cpu0 -debug -relocation-model=pic -filetype=asm outputs/fma.ll -o - 
+
+Features:
+CPU:cpu032II
+TuneCPU:cpu032II
+
+Pass Arguments:  -targetlibinfo -targetpassconfig -machinemoduleinfo -tti -tbaa -scoped-noalias-aa -assumption-cache-tracker -profile-summary-info -collector-metadata -machine-branch-prob -pre-isel-intrinsic-lowering -verify -domtree -basic-aa -loops -loop-simplify -scalar-evolution -canon-freeze -iv-users -loop-reduce -basic-aa -aa -mergeicmps -loops -lazy-branch-prob -lazy-block-freq -expandmemcmp -gc-lowering -shadow-stack-gc-lowering -lower-constant-intrinsics -unreachableblockelim -domtree -loops -postdomtree -branch-prob -block-freq -consthoist -partially-inline-libcalls -post-inline-ee-instrument -scalarize-masked-mem-intrin -expand-reductions -atomic-expand -domtree -loops -codegenprepare -rewrite-symbols -domtree -dwarfehprepare -safe-stack -stack-protector -verify -domtree -basic-aa -aa -loops -postdomtree -branch-prob -lazy-branch-prob -lazy-block-freq -finalize-isel -lazy-machine-block-freq -early-tailduplication -opt-phis -slotindexes -stack-coloring -localstackalloc -dead-mi-elimination -machinedomtree -machine-loops -machine-block-freq -early-machinelicm -machinedomtree -machine-block-freq -machine-cse -machinepostdomtree -machine-sink -peephole-opt -dead-mi-elimination -detect-dead-lanes -processimpdefs -unreachable-mbb-elimination -livevars -machinedomtree -machine-loops -phi-node-elimination -twoaddressinstruction -slotindexes -liveintervals -simple-register-coalescing -rename-independent-subregs -machine-scheduler -machine-block-freq -livedebugvars -livestacks -virtregmap -liveregmatrix -edge-bundles -spill-code-placement -lazy-machine-block-freq -machine-opt-remark-emitter -greedy -virtregrewriter -stack-slot-coloring -machine-cp
+Target Library Information
+Target Pass Configuration
+Machine Module Information
+Target Transform Information
+Type-Based Alias Analysis
+Scoped NoAlias Alias Analysis
+Assumption Cache Tracker
+Profile summary info
+Create Garbage Collector Module Metadata
+Machine Branch Probability Analysis
+  ModulePass Manager
+    Pre-ISel Intrinsic Lowering
+    FunctionPass Manager
+      Module Verifier
+      Dominator Tree Construction
+      Basic Alias Analysis (stateless AA impl)
+      Natural Loop Information
+      Canonicalize natural loops
+      Scalar Evolution Analysis
+      Loop Pass Manager
+        Canonicalize Freeze Instructions in Loops
+        Induction Variable Users
+        Loop Strength Reduction
+      Basic Alias Analysis (stateless AA impl)
+      Function Alias Analysis Results
+      Merge contiguous icmps into a memcmp
+      Natural Loop Information
+      Lazy Branch Probability Analysis
+      Lazy Block Frequency Analysis
+      Expand memcmp() to load/stores
+      Lower Garbage Collection Instructions
+      Shadow Stack GC Lowering
+      Lower constant intrinsics
+      Remove unreachable blocks from the CFG
+      Dominator Tree Construction
+      Natural Loop Information
+      Post-Dominator Tree Construction
+      Branch Probability Analysis
+      Block Frequency Analysis
+      Constant Hoisting
+      Partially inline calls to library functions
+      Instrument function entry/exit with calls to e.g. mcount() (post inlining)
+      Scalarize Masked Memory Intrinsics
+      Expand reduction intrinsics
+      Expand Atomic instructions
+      Dominator Tree Construction
+      Natural Loop Information
+      CodeGen Prepare
+    Rewrite Symbols
+    FunctionPass Manager
+      Dominator Tree Construction
+      Exception handling preparation
+      Safe Stack instrumentation pass
+      Insert stack protectors
+      Module Verifier
+      Dominator Tree Construction
+      Basic Alias Analysis (stateless AA impl)
+      Function Alias Analysis Results
+      Natural Loop Information
+      Post-Dominator Tree Construction
+      Branch Probability Analysis
+      Lazy Branch Probability Analysis
+      Lazy Block Frequency Analysis
+      CPU0 DAG->DAG Pattern Instruction Selection
+      Finalize ISel and expand pseudo-instructions
+      Lazy Machine Block Frequency Analysis
+      Early Tail Duplication
+      Optimize machine instruction PHIs
+      Slot index numbering
+      Merge disjoint stack slots
+      Local Stack Slot Allocation
+      Remove dead machine instructions
+      MachineDominator Tree Construction
+      Machine Natural Loop Construction
+      Machine Block Frequency Analysis
+      Early Machine Loop Invariant Code Motion
+      MachineDominator Tree Construction
+      Machine Block Frequency Analysis
+      Machine Common Subexpression Elimination
+      MachinePostDominator Tree Construction
+      Machine code sinking
+      Peephole Optimizations
+      Remove dead machine instructions
+      Cpu0 Emit GP Restore
+      Detect Dead Lanes
+      Process Implicit Definitions
+      Remove unreachable machine basic blocks
+      Live Variable Analysis
+      MachineDominator Tree Construction
+      Machine Natural Loop Construction
+      Eliminate PHI nodes for register allocation
+      Two-Address instruction pass
+      Slot index numbering
+      Live Interval Analysis
+      Simple Register Coalescing
+      Rename Disconnected Subregister Components
+      Machine Instruction Scheduler
+      Machine Block Frequency Analysis
+      Debug Variable Analysis
+      Live Stack Slot Analysis
+      Virtual Register Map
+      Live Register Matrix
+      Bundle Machine CFG Edges
+      Spill Code Placement Analysis
+      Lazy Machine Block Frequency Analysis
+      Machine Optimization Remark Emitter
+      Greedy Register Allocator
+      Virtual Register Rewriter
+      Stack Slot Coloring
+      Machine Copy Propagation Pass
+      MIR Printing Pass
+      Free MachineFunction
+Skipping pass 'Merge contiguous icmps into a memcmp' on function main
+Skipping pass 'Expand memcmp() to load/stores' on function main
+		Looking for trivial roots
+Found a new trivial root: %entry
+Last visited node: %entry
+		Looking for non-trivial roots
+Total: 1, Num: 2
+Discovered CFG nodes:
+0: nullptr
+1: nullptr
+2: %entry
+Found roots: %entry 
+---- Branch Probability Info : main ----
+
+Computing probabilities for entry
+
+block-frequency: main
+=====================
+reverse-post-order-traversal
+ - 0: entry
+loop-detection
+compute-mass-in-function
+ - node: entry
+  => mass:  ffffffffffffffff
+float-to-int: min = 1.0, max = 1.0, factor = 8.0
+ - entry: float = 1.0, scaled = 8.0, int = 8
+block-frequency-info: main
+ - entry: float = 1.0, int = 8
+
+Skipping pass 'Constant Hoisting' on function main
+Skipping pass 'Partially inline calls to library functions' on function main
+
+Features:
+CPU:cpu032II
+TuneCPU:cpu032II
+
+Skipping pass 'CodeGen Prepare' on function main
+[SafeStack] Function: main
+[SafeStack]     safestack is not requested for this function
+		Looking for trivial roots
+Found a new trivial root: %entry
+Last visited node: %entry
+		Looking for non-trivial roots
+Total: 1, Num: 2
+Discovered CFG nodes:
+0: nullptr
+1: nullptr
+2: %entry
+Found roots: %entry 
+---- Branch Probability Info : main ----
+
+Computing probabilities for entry
+Skipping pass 'CPU0 DAG->DAG Pattern Instruction Selection' on function main
+
+Changing optimization level for Function main
+	Before: -O2 ; After: -O0
+	FastISel is enabled
+
+
+
+=== main
+Enabling fast-isel
+Creating constant: t1: i32 = Constant<0>
+Creating new node: t3: i32 = undef
+Creating new node: t4: ch = store<(store 4 into %ir.retval)> t0, Constant:i32<0>, FrameIndex:i32<0>, undef:i32
+Creating fp constant: t5: f32 = ConstantFP<1.100000e+01>
+Creating new node: t7: ch = store<(store 4 into %ir.a)> t4, ConstantFP:f32<1.100000e+01>, FrameIndex:i32<1>, undef:i32
+Creating fp constant: t8: f32 = ConstantFP<2.200000e+01>
+Creating new node: t10: ch = store<(store 4 into %ir.b)> t7, ConstantFP:f32<2.200000e+01>, FrameIndex:i32<2>, undef:i32
+Creating new node: t11: f32,ch = load<(dereferenceable load 4 from %ir.a)> t10, FrameIndex:i32<1>, undef:i32
+Creating new node: t12: f32,ch = load<(dereferenceable load 4 from %ir.b)> t10, FrameIndex:i32<2>, undef:i32
+Creating new node: t13: f32 = fmul t11, t12
+Creating new node: t15: ch = TokenFactor t11:1, t12:1
+Creating new node: t16: ch = store<(store 4 into %ir.c)> t15, t13, FrameIndex:i32<3>, undef:i32
+Creating new node: t18: ch,glue = CopyToReg t16, Register:i32 $v0, Constant:i32<0>
+Creating new node: t19: ch = Cpu0ISD::Ret t18, Register:i32 $v0, t18:1
+Initial selection DAG: %bb.0 'main:entry'
+SelectionDAG has 20 nodes:
+        t0: ch = EntryToken
+      t4: ch = store<(store 4 into %ir.retval)> t0, Constant:i32<0>, FrameIndex:i32<0>, undef:i32
+    t7: ch = store<(store 4 into %ir.a)> t4, ConstantFP:f32<1.100000e+01>, FrameIndex:i32<1>, undef:i32
+  t10: ch = store<(store 4 into %ir.b)> t7, ConstantFP:f32<2.200000e+01>, FrameIndex:i32<2>, undef:i32
+  t11: f32,ch = load<(dereferenceable load 4 from %ir.a)> t10, FrameIndex:i32<1>, undef:i32
+  t12: f32,ch = load<(dereferenceable load 4 from %ir.b)> t10, FrameIndex:i32<2>, undef:i32
+      t15: ch = TokenFactor t11:1, t12:1
+      t13: f32 = fmul t11, t12
+    t16: ch = store<(store 4 into %ir.c)> t15, t13, FrameIndex:i32<3>, undef:i32
+  t18: ch,glue = CopyToReg t16, Register:i32 $v0, Constant:i32<0>
+  t19: ch = Cpu0ISD::Ret t18, Register:i32 $v0, t18:1
+
+
+
+Combining: t19: ch = Cpu0ISD::Ret t18, Register:i32 $v0, t18:1
+
+Combining: t18: ch,glue = CopyToReg t16, Register:i32 $v0, Constant:i32<0>
+
+Combining: t17: i32 = Register $v0
+
+Combining: t16: ch = store<(store 4 into %ir.c)> t15, t13, FrameIndex:i32<3>, undef:i32
+
+Combining: t15: ch = TokenFactor t11:1, t12:1
+
+Combining: t14: i32 = FrameIndex<3>
+
+Combining: t13: f32 = fmul t11, t12
+
+Combining: t12: f32,ch = load<(dereferenceable load 4 from %ir.b)> t10, FrameIndex:i32<2>, undef:i32
+
+Combining: t11: f32,ch = load<(dereferenceable load 4 from %ir.a)> t10, FrameIndex:i32<1>, undef:i32
+
+Combining: t10: ch = store<(store 4 into %ir.b)> t7, ConstantFP:f32<2.200000e+01>, FrameIndex:i32<2>, undef:i32
+Creating constant: t20: i32 = Constant<1102053376>
+Creating new node: t21: ch = store<(store 4 into %ir.b)> t7, Constant:i32<1102053376>, FrameIndex:i32<2>, undef:i32
+ ... into: t21: ch = store<(store 4 into %ir.b)> t7, Constant:i32<1102053376>, FrameIndex:i32<2>, undef:i32
+
+Combining: t12: f32,ch = load<(dereferenceable load 4 from %ir.b)> t21, FrameIndex:i32<2>, undef:i32
+
+Combining: t11: f32,ch = load<(dereferenceable load 4 from %ir.a)> t21, FrameIndex:i32<1>, undef:i32
+
+Combining: t21: ch = store<(store 4 into %ir.b)> t7, Constant:i32<1102053376>, FrameIndex:i32<2>, undef:i32
+
+Combining: t20: i32 = Constant<1102053376>
+
+Combining: t9: i32 = FrameIndex<2>
+
+Combining: t7: ch = store<(store 4 into %ir.a)> t4, ConstantFP:f32<1.100000e+01>, FrameIndex:i32<1>, undef:i32
+Creating constant: t22: i32 = Constant<1093664768>
+Creating new node: t23: ch = store<(store 4 into %ir.a)> t4, Constant:i32<1093664768>, FrameIndex:i32<1>, undef:i32
+ ... into: t23: ch = store<(store 4 into %ir.a)> t4, Constant:i32<1093664768>, FrameIndex:i32<1>, undef:i32
+
+Combining: t21: ch = store<(store 4 into %ir.b)> t23, Constant:i32<1102053376>, FrameIndex:i32<2>, undef:i32
+
+Combining: t23: ch = store<(store 4 into %ir.a)> t4, Constant:i32<1093664768>, FrameIndex:i32<1>, undef:i32
+
+Combining: t22: i32 = Constant<1093664768>
+
+Combining: t6: i32 = FrameIndex<1>
+
+Combining: t4: ch = store<(store 4 into %ir.retval)> t0, Constant:i32<0>, FrameIndex:i32<0>, undef:i32
+
+Combining: t3: i32 = undef
+
+Combining: t2: i32 = FrameIndex<0>
+
+Combining: t1: i32 = Constant<0>
+
+Combining: t0: ch = EntryToken
+Optimized lowered selection DAG: %bb.0 'main:entry'
+SelectionDAG has 20 nodes:
+  t11: f32,ch = load<(dereferenceable load 4 from %ir.a)> t21, FrameIndex:i32<1>, undef:i32
+  t12: f32,ch = load<(dereferenceable load 4 from %ir.b)> t21, FrameIndex:i32<2>, undef:i32
+      t15: ch = TokenFactor t11:1, t12:1
+      t13: f32 = fmul t11, t12
+    t16: ch = store<(store 4 into %ir.c)> t15, t13, FrameIndex:i32<3>, undef:i32
+  t18: ch,glue = CopyToReg t16, Register:i32 $v0, Constant:i32<0>
+        t0: ch = EntryToken
+      t4: ch = store<(store 4 into %ir.retval)> t0, Constant:i32<0>, FrameIndex:i32<0>, undef:i32
+    t23: ch = store<(store 4 into %ir.a)> t4, Constant:i32<1093664768>, FrameIndex:i32<1>, undef:i32
+  t21: ch = store<(store 4 into %ir.b)> t23, Constant:i32<1102053376>, FrameIndex:i32<2>, undef:i32
+  t19: ch = Cpu0ISD::Ret t18, Register:i32 $v0, t18:1
+
+
+Legalizing node: t22: i32 = Constant<1093664768>
+Analyzing result type: i32
+Legal result type
+Legally typed node: t22: i32 = Constant<1093664768>
+
+Legalizing node: t20: i32 = Constant<1102053376>
+Analyzing result type: i32
+Legal result type
+Legally typed node: t20: i32 = Constant<1102053376>
+
+Legalizing node: t17: i32 = Register $v0
+Ignoring node results
+Legally typed node: t17: i32 = Register $v0
+
+Legalizing node: t14: i32 = FrameIndex<3>
+Analyzing result type: i32
+Legal result type
+Legally typed node: t14: i32 = FrameIndex<3>
+
+Legalizing node: t9: i32 = FrameIndex<2>
+Analyzing result type: i32
+Legal result type
+Legally typed node: t9: i32 = FrameIndex<2>
+
+Legalizing node: t6: i32 = FrameIndex<1>
+Analyzing result type: i32
+Legal result type
+Legally typed node: t6: i32 = FrameIndex<1>
+
+Legalizing node: t3: i32 = undef
+Analyzing result type: i32
+Legal result type
+Legally typed node: t3: i32 = undef
+
+Legalizing node: t2: i32 = FrameIndex<0>
+Analyzing result type: i32
+Legal result type
+Legally typed node: t2: i32 = FrameIndex<0>
+
+Legalizing node: t1: i32 = Constant<0>
+Analyzing result type: i32
+Legal result type
+Legally typed node: t1: i32 = Constant<0>
+
+Legalizing node: t0: ch = EntryToken
+Analyzing result type: ch
+Legal result type
+Legally typed node: t0: ch = EntryToken
+
+Legalizing node: t4: ch = store<(store 4 into %ir.retval)> t0, Constant:i32<0>, FrameIndex:i32<0>, undef:i32
+Analyzing result type: ch
+Legal result type
+Analyzing operand: t0: ch = EntryToken
+Legal operand
+Analyzing operand: t1: i32 = Constant<0>
+Legal operand
+Analyzing operand: t2: i32 = FrameIndex<0>
+Legal operand
+Analyzing operand: t3: i32 = undef
+Legal operand
+Legally typed node: t4: ch = store<(store 4 into %ir.retval)> t0, Constant:i32<0>, FrameIndex:i32<0>, undef:i32
+
+Legalizing node: t23: ch = store<(store 4 into %ir.a)> t4, Constant:i32<1093664768>, FrameIndex:i32<1>, undef:i32
+Analyzing result type: ch
+Legal result type
+Analyzing operand: t4: ch = store<(store 4 into %ir.retval)> t0, Constant:i32<0>, FrameIndex:i32<0>, undef:i32
+Legal operand
+Analyzing operand: t22: i32 = Constant<1093664768>
+Legal operand
+Analyzing operand: t6: i32 = FrameIndex<1>
+Legal operand
+Analyzing operand: t3: i32 = undef
+Legal operand
+Legally typed node: t23: ch = store<(store 4 into %ir.a)> t4, Constant:i32<1093664768>, FrameIndex:i32<1>, undef:i32
+
+Legalizing node: t21: ch = store<(store 4 into %ir.b)> t23, Constant:i32<1102053376>, FrameIndex:i32<2>, undef:i32
+Analyzing result type: ch
+Legal result type
+Analyzing operand: t23: ch = store<(store 4 into %ir.a)> t4, Constant:i32<1093664768>, FrameIndex:i32<1>, undef:i32
+Legal operand
+Analyzing operand: t20: i32 = Constant<1102053376>
+Legal operand
+Analyzing operand: t9: i32 = FrameIndex<2>
+Legal operand
+Analyzing operand: t3: i32 = undef
+Legal operand
+Legally typed node: t21: ch = store<(store 4 into %ir.b)> t23, Constant:i32<1102053376>, FrameIndex:i32<2>, undef:i32
+
+Legalizing node: t12: f32,ch = load<(dereferenceable load 4 from %ir.b)> t21, FrameIndex:i32<2>, undef:i32
+Analyzing result type: f32
+Soften float result 0: t12: f32,ch = load<(dereferenceable load 4 from %ir.b)> t21, FrameIndex:i32<2>, undef:i32
+
+Creating new node: t24: i32,ch = load<(load 4 from %ir.b)> t21, FrameIndex:i32<2>, undef:i32
+Legalizing node: t24: i32,ch = load<(load 4 from %ir.b)> t21, FrameIndex:i32<2>, undef:i32
+Analyzing result type: i32
+Legal result type
+Analyzing result type: ch
+Legal result type
+Analyzing operand: t21: ch = store<(store 4 into %ir.b)> t23, Constant:i32<1102053376>, FrameIndex:i32<2>, undef:i32
+Legal operand
+Analyzing operand: t9: i32 = FrameIndex<2>
+Legal operand
+Analyzing operand: t3: i32 = undef
+Legal operand
+Legally typed node: t24: i32,ch = load<(load 4 from %ir.b)> t21, FrameIndex:i32<2>, undef:i32
+
+Legalizing node: t11: f32,ch = load<(dereferenceable load 4 from %ir.a)> t21, FrameIndex:i32<1>, undef:i32
+Analyzing result type: f32
+Soften float result 0: t11: f32,ch = load<(dereferenceable load 4 from %ir.a)> t21, FrameIndex:i32<1>, undef:i32
+
+Creating new node: t25: i32,ch = load<(load 4 from %ir.a)> t21, FrameIndex:i32<1>, undef:i32
+Legalizing node: t13: f32 = fmul t11, t12
+Analyzing result type: f32
+Soften float result 0: t13: f32 = fmul t11, t12
+
+Creating constant: t27: i32 = TargetConstant<8>
+Creating constant: t28: i32 = TargetConstant<0>
+Creating new node: t29: ch,glue = callseq_start t0, TargetConstant:i32<8>, TargetConstant:i32<0>
+Creating new node: t31: i32,ch = CopyFromReg t29, Register:i32 $sp
+Creating new node: t34: i32 = Cpu0ISD::Wrapper Register:i32 $gp, TargetExternalSymbol:i32'__mulsf3' [TF=2]
+Creating new node: t35: i32,ch = load<(load 4 from call-entry &__mulsf3)> t29, t34, undef:i32
+Creating new node: t37: ch,glue = CopyToReg t29, Register:i32 $t9, t35
+Creating new node: t39: ch,glue = CopyToReg t37, Register:i32 $a0, t25, t37:1
+Creating new node: t41: ch,glue = CopyToReg t39, Register:i32 $a1, t24, t39:1
+Creating new node: t42: ch,glue = CopyToReg t41, Register:i32 $gp, Register:i32 $gp, t41:1
+Creating new node: t44: ch,glue = Cpu0ISD::JmpLink t29, Register:i32 $t9, Register:i32 $a0, Register:i32 $a1, Register:i32 $gp, RegisterMask:Untyped, t42:1
+Creating new node: t45: ch,glue = callseq_end t44, TargetConstant:i32<8>, TargetConstant:i32<0>, t44:1
+Creating new node: t46: i32,ch,glue = CopyFromReg t45, Register:i32 $v0, t45:1
+Legalizing node: t33: i32 = TargetExternalSymbol'__mulsf3' [TF=2]
+Analyzing result type: i32
+Legal result type
+Legally typed node: t33: i32 = TargetExternalSymbol'__mulsf3' [TF=2]
+
+Legalizing node: t43: Untyped = RegisterMask
+Analyzing result type: Untyped
+Legal result type
+Legally typed node: t43: Untyped = RegisterMask
+
+Legalizing node: t32: i32 = Register $gp
+Ignoring node results
+Legally typed node: t32: i32 = Register $gp
+
+Legalizing node: t34: i32 = Cpu0ISD::Wrapper Register:i32 $gp, TargetExternalSymbol:i32'__mulsf3' [TF=2]
+Analyzing result type: i32
+Legal result type
+Analyzing operand: t33: i32 = TargetExternalSymbol'__mulsf3' [TF=2]
+Legal operand
+Legally typed node: t34: i32 = Cpu0ISD::Wrapper Register:i32 $gp, TargetExternalSymbol:i32'__mulsf3' [TF=2]
+
+Legalizing node: t40: i32 = Register $a1
+Ignoring node results
+Legally typed node: t40: i32 = Register $a1
+
+Legalizing node: t38: i32 = Register $a0
+Ignoring node results
+Legally typed node: t38: i32 = Register $a0
+
+Legalizing node: t36: i32 = Register $t9
+Ignoring node results
+Legally typed node: t36: i32 = Register $t9
+
+Legalizing node: t28: i32 = TargetConstant<0>
+Ignoring node results
+Legally typed node: t28: i32 = TargetConstant<0>
+
+Legalizing node: t27: i32 = TargetConstant<8>
+Ignoring node results
+Legally typed node: t27: i32 = TargetConstant<8>
+
+Legalizing node: t29: ch,glue = callseq_start t0, TargetConstant:i32<8>, TargetConstant:i32<0>
+Analyzing result type: ch
+Legal result type
+Analyzing result type: glue
+Legal result type
+Analyzing operand: t0: ch = EntryToken
+Legal operand
+Legally typed node: t29: ch,glue = callseq_start t0, TargetConstant:i32<8>, TargetConstant:i32<0>
+
+Legalizing node: t35: i32,ch = load<(load 4 from call-entry &__mulsf3)> t29, t34, undef:i32
+Analyzing result type: i32
+Legal result type
+Analyzing result type: ch
+Legal result type
+Analyzing operand: t29: ch,glue = callseq_start t0, TargetConstant:i32<8>, TargetConstant:i32<0>
+Legal operand
+Analyzing operand: t34: i32 = Cpu0ISD::Wrapper Register:i32 $gp, TargetExternalSymbol:i32'__mulsf3' [TF=2]
+Legal operand
+Analyzing operand: t3: i32 = undef
+Legal operand
+Legally typed node: t35: i32,ch = load<(load 4 from call-entry &__mulsf3)> t29, t34, undef:i32
+
+Legalizing node: t37: ch,glue = CopyToReg t29, Register:i32 $t9, t35
+Analyzing result type: ch
+Legal result type
+Analyzing result type: glue
+Legal result type
+Analyzing operand: t29: ch,glue = callseq_start t0, TargetConstant:i32<8>, TargetConstant:i32<0>
+Legal operand
+Analyzing operand: t35: i32,ch = load<(load 4 from call-entry &__mulsf3)> t29, t34, undef:i32
+Legal operand
+Legally typed node: t37: ch,glue = CopyToReg t29, Register:i32 $t9, t35
+
+Legalizing node: t25: i32,ch = load<(load 4 from %ir.a)> t21, FrameIndex:i32<1>, undef:i32
+Analyzing result type: i32
+Legal result type
+Analyzing result type: ch
+Legal result type
+Analyzing operand: t21: ch = store<(store 4 into %ir.b)> t23, Constant:i32<1102053376>, FrameIndex:i32<2>, undef:i32
+Legal operand
+Analyzing operand: t6: i32 = FrameIndex<1>
+Legal operand
+Analyzing operand: t3: i32 = undef
+Legal operand
+Legally typed node: t25: i32,ch = load<(load 4 from %ir.a)> t21, FrameIndex:i32<1>, undef:i32
+
+Legalizing node: t15: ch = TokenFactor t25:1, t24:1
+Analyzing result type: ch
+Legal result type
+Analyzing operand: t25: i32,ch = load<(load 4 from %ir.a)> t21, FrameIndex:i32<1>, undef:i32
+Legal operand
+Analyzing operand: t24: i32,ch = load<(load 4 from %ir.b)> t21, FrameIndex:i32<2>, undef:i32
+Legal operand
+Legally typed node: t15: ch = TokenFactor t25:1, t24:1
+
+Legalizing node: t16: ch = store<(store 4 into %ir.c)> t15, t13, FrameIndex:i32<3>, undef:i32
+Analyzing result type: ch
+Legal result type
+Analyzing operand: t15: ch = TokenFactor t25:1, t24:1
+Legal operand
+Analyzing operand: t13: f32 = fmul t11, t12
+Soften float operand 1: t16: ch = store<(store 4 into %ir.c)> t15, t13, FrameIndex:i32<3>, undef:i32
+
+Creating new node: t47: ch = store<(store 4 into %ir.c)> t15, t46, FrameIndex:i32<3>, undef:i32
+Legalizing node: t39: ch,glue = CopyToReg t37, Register:i32 $a0, t25, t37:1
+Analyzing result type: ch
+Legal result type
+Analyzing result type: glue
+Legal result type
+Analyzing operand: t37: ch,glue = CopyToReg t29, Register:i32 $t9, t35
+Legal operand
+Analyzing operand: t25: i32,ch = load<(load 4 from %ir.a)> t21, FrameIndex:i32<1>, undef:i32
+Legal operand
+Analyzing operand: t37: ch,glue = CopyToReg t29, Register:i32 $t9, t35
+Legal operand
+Legally typed node: t39: ch,glue = CopyToReg t37, Register:i32 $a0, t25, t37:1
+
+Legalizing node: t41: ch,glue = CopyToReg t39, Register:i32 $a1, t24, t39:1
+Analyzing result type: ch
+Legal result type
+Analyzing result type: glue
+Legal result type
+Analyzing operand: t39: ch,glue = CopyToReg t37, Register:i32 $a0, t25, t37:1
+Legal operand
+Analyzing operand: t24: i32,ch = load<(load 4 from %ir.b)> t21, FrameIndex:i32<2>, undef:i32
+Legal operand
+Analyzing operand: t39: ch,glue = CopyToReg t37, Register:i32 $a0, t25, t37:1
+Legal operand
+Legally typed node: t41: ch,glue = CopyToReg t39, Register:i32 $a1, t24, t39:1
+
+Legalizing node: t42: ch,glue = CopyToReg t41, Register:i32 $gp, Register:i32 $gp, t41:1
+Analyzing result type: ch
+Legal result type
+Analyzing result type: glue
+Legal result type
+Analyzing operand: t41: ch,glue = CopyToReg t39, Register:i32 $a1, t24, t39:1
+Legal operand
+Analyzing operand: t41: ch,glue = CopyToReg t39, Register:i32 $a1, t24, t39:1
+Legal operand
+Legally typed node: t42: ch,glue = CopyToReg t41, Register:i32 $gp, Register:i32 $gp, t41:1
+
+Legalizing node: t44: ch,glue = Cpu0ISD::JmpLink t29, Register:i32 $t9, Register:i32 $a0, Register:i32 $a1, Register:i32 $gp, RegisterMask:Untyped, t42:1
+Analyzing result type: ch
+Legal result type
+Analyzing result type: glue
+Legal result type
+Analyzing operand: t29: ch,glue = callseq_start t0, TargetConstant:i32<8>, TargetConstant:i32<0>
+Legal operand
+Analyzing operand: t43: Untyped = RegisterMask
+Legal operand
+Analyzing operand: t42: ch,glue = CopyToReg t41, Register:i32 $gp, Register:i32 $gp, t41:1
+Legal operand
+Legally typed node: t44: ch,glue = Cpu0ISD::JmpLink t29, Register:i32 $t9, Register:i32 $a0, Register:i32 $a1, Register:i32 $gp, RegisterMask:Untyped, t42:1
+
+Legalizing node: t45: ch,glue = callseq_end t44, TargetConstant:i32<8>, TargetConstant:i32<0>, t44:1
+Analyzing result type: ch
+Legal result type
+Analyzing result type: glue
+Legal result type
+Analyzing operand: t44: ch,glue = Cpu0ISD::JmpLink t29, Register:i32 $t9, Register:i32 $a0, Register:i32 $a1, Register:i32 $gp, RegisterMask:Untyped, t42:1
+Legal operand
+Analyzing operand: t44: ch,glue = Cpu0ISD::JmpLink t29, Register:i32 $t9, Register:i32 $a0, Register:i32 $a1, Register:i32 $gp, RegisterMask:Untyped, t42:1
+Legal operand
+Legally typed node: t45: ch,glue = callseq_end t44, TargetConstant:i32<8>, TargetConstant:i32<0>, t44:1
+
+Legalizing node: t46: i32,ch,glue = CopyFromReg t45, Register:i32 $v0, t45:1
+Analyzing result type: i32
+Legal result type
+Analyzing result type: ch
+Legal result type
+Analyzing result type: glue
+Legal result type
+Analyzing operand: t45: ch,glue = callseq_end t44, TargetConstant:i32<8>, TargetConstant:i32<0>, t44:1
+Legal operand
+Analyzing operand: t45: ch,glue = callseq_end t44, TargetConstant:i32<8>, TargetConstant:i32<0>, t44:1
+Legal operand
+Legally typed node: t46: i32,ch,glue = CopyFromReg t45, Register:i32 $v0, t45:1
+
+Legalizing node: t47: ch = store<(store 4 into %ir.c)> t15, t46, FrameIndex:i32<3>, undef:i32
+Analyzing result type: ch
+Legal result type
+Analyzing operand: t15: ch = TokenFactor t25:1, t24:1
+Legal operand
+Analyzing operand: t46: i32,ch,glue = CopyFromReg t45, Register:i32 $v0, t45:1
+Legal operand
+Analyzing operand: t14: i32 = FrameIndex<3>
+Legal operand
+Analyzing operand: t3: i32 = undef
+Legal operand
+Legally typed node: t47: ch = store<(store 4 into %ir.c)> t15, t46, FrameIndex:i32<3>, undef:i32
+
+Legalizing node: t18: ch,glue = CopyToReg t47, Register:i32 $v0, Constant:i32<0>
+Analyzing result type: ch
+Legal result type
+Analyzing result type: glue
+Legal result type
+Analyzing operand: t47: ch = store<(store 4 into %ir.c)> t15, t46, FrameIndex:i32<3>, undef:i32
+Legal operand
+Analyzing operand: t1: i32 = Constant<0>
+Legal operand
+Legally typed node: t18: ch,glue = CopyToReg t47, Register:i32 $v0, Constant:i32<0>
+
+Legalizing node: t19: ch = Cpu0ISD::Ret t18, Register:i32 $v0, t18:1
+Analyzing result type: ch
+Legal result type
+Analyzing operand: t18: ch,glue = CopyToReg t47, Register:i32 $v0, Constant:i32<0>
+Legal operand
+Analyzing operand: t18: ch,glue = CopyToReg t47, Register:i32 $v0, Constant:i32<0>
+Legal operand
+Legally typed node: t19: ch = Cpu0ISD::Ret t18, Register:i32 $v0, t18:1
+
+Legalizing node: t65535: ch = handlenode t19
+Analyzing result type: ch
+Legal result type
+Analyzing operand: t19: ch = Cpu0ISD::Ret t18, Register:i32 $v0, t18:1
+Legal operand
+Legally typed node: t65535: ch = handlenode t19
+
+Type-legalized selection DAG: %bb.0 'main:entry'
+SelectionDAG has 37 nodes:
+  t0: ch = EntryToken
+      t15: ch = TokenFactor t25:1, t24:1
+      t46: i32,ch,glue = CopyFromReg t45, Register:i32 $v0, t45:1
+    t47: ch = store<(store 4 into %ir.c)> t15, t46, FrameIndex:i32<3>, undef:i32
+  t18: ch,glue = CopyToReg t47, Register:i32 $v0, Constant:i32<0>
+      t4: ch = store<(store 4 into %ir.retval)> t0, Constant:i32<0>, FrameIndex:i32<0>, undef:i32
+    t23: ch = store<(store 4 into %ir.a)> t4, Constant:i32<1093664768>, FrameIndex:i32<1>, undef:i32
+  t21: ch = store<(store 4 into %ir.b)> t23, Constant:i32<1102053376>, FrameIndex:i32<2>, undef:i32
+  t24: i32,ch = load<(load 4 from %ir.b)> t21, FrameIndex:i32<2>, undef:i32
+  t25: i32,ch = load<(load 4 from %ir.a)> t21, FrameIndex:i32<1>, undef:i32
+  t29: ch,glue = callseq_start t0, TargetConstant:i32<8>, TargetConstant:i32<0>
+      t34: i32 = Cpu0ISD::Wrapper Register:i32 $gp, TargetExternalSymbol:i32'__mulsf3' [TF=2]
+    t35: i32,ch = load<(load 4 from call-entry &__mulsf3)> t29, t34, undef:i32
+  t37: ch,glue = CopyToReg t29, Register:i32 $t9, t35
+  t39: ch,glue = CopyToReg t37, Register:i32 $a0, t25, t37:1
+  t41: ch,glue = CopyToReg t39, Register:i32 $a1, t24, t39:1
+    t42: ch,glue = CopyToReg t41, Register:i32 $gp, Register:i32 $gp, t41:1
+  t44: ch,glue = Cpu0ISD::JmpLink t29, Register:i32 $t9, Register:i32 $a0, Register:i32 $a1, Register:i32 $gp, RegisterMask:Untyped, t42:1
+  t45: ch,glue = callseq_end t44, TargetConstant:i32<8>, TargetConstant:i32<0>, t44:1
+  t19: ch = Cpu0ISD::Ret t18, Register:i32 $v0, t18:1
+
+
+
+Combining: t47: ch = store<(store 4 into %ir.c)> t15, t46, FrameIndex:i32<3>, undef:i32
+
+Combining: t46: i32,ch,glue = CopyFromReg t45, Register:i32 $v0, t45:1
+
+Combining: t45: ch,glue = callseq_end t44, TargetConstant:i32<8>, TargetConstant:i32<0>, t44:1
+
+Combining: t44: ch,glue = Cpu0ISD::JmpLink t29, Register:i32 $t9, Register:i32 $a0, Register:i32 $a1, Register:i32 $gp, RegisterMask:Untyped, t42:1
+
+Combining: t43: Untyped = RegisterMask
+
+Combining: t42: ch,glue = CopyToReg t41, Register:i32 $gp, Register:i32 $gp, t41:1
+
+Combining: t41: ch,glue = CopyToReg t39, Register:i32 $a1, t24, t39:1
+
+Combining: t40: i32 = Register $a1
+
+Combining: t39: ch,glue = CopyToReg t37, Register:i32 $a0, t25, t37:1
+
+Combining: t38: i32 = Register $a0
+
+Combining: t37: ch,glue = CopyToReg t29, Register:i32 $t9, t35
+
+Combining: t36: i32 = Register $t9
+
+Combining: t35: i32,ch = load<(load 4 from call-entry &__mulsf3)> t29, t34, undef:i32
+
+Combining: t34: i32 = Cpu0ISD::Wrapper Register:i32 $gp, TargetExternalSymbol:i32'__mulsf3' [TF=2]
+
+Combining: t33: i32 = TargetExternalSymbol'__mulsf3' [TF=2]
+
+Combining: t32: i32 = Register $gp
+
+Combining: t29: ch,glue = callseq_start t0, TargetConstant:i32<8>, TargetConstant:i32<0>
+
+Combining: t28: i32 = TargetConstant<0>
+
+Combining: t27: i32 = TargetConstant<8>
+
+Combining: t25: i32,ch = load<(load 4 from %ir.a)> t21, FrameIndex:i32<1>, undef:i32
+
+Combining: t24: i32,ch = load<(load 4 from %ir.b)> t21, FrameIndex:i32<2>, undef:i32
+
+Combining: t23: ch = store<(store 4 into %ir.a)> t4, Constant:i32<1093664768>, FrameIndex:i32<1>, undef:i32
+
+Combining: t22: i32 = Constant<1093664768>
+
+Combining: t21: ch = store<(store 4 into %ir.b)> t23, Constant:i32<1102053376>, FrameIndex:i32<2>, undef:i32
+
+Combining: t20: i32 = Constant<1102053376>
+
+Combining: t19: ch = Cpu0ISD::Ret t18, Register:i32 $v0, t18:1
+
+Combining: t18: ch,glue = CopyToReg t47, Register:i32 $v0, Constant:i32<0>
+
+Combining: t17: i32 = Register $v0
+
+Combining: t15: ch = TokenFactor t25:1, t24:1
+
+Combining: t14: i32 = FrameIndex<3>
+
+Combining: t9: i32 = FrameIndex<2>
+
+Combining: t6: i32 = FrameIndex<1>
+
+Combining: t4: ch = store<(store 4 into %ir.retval)> t0, Constant:i32<0>, FrameIndex:i32<0>, undef:i32
+
+Combining: t3: i32 = undef
+
+Combining: t2: i32 = FrameIndex<0>
+
+Combining: t1: i32 = Constant<0>
+
+Combining: t0: ch = EntryToken
+Optimized type-legalized selection DAG: %bb.0 'main:entry'
+SelectionDAG has 37 nodes:
+  t0: ch = EntryToken
+      t15: ch = TokenFactor t25:1, t24:1
+      t46: i32,ch,glue = CopyFromReg t45, Register:i32 $v0, t45:1
+    t47: ch = store<(store 4 into %ir.c)> t15, t46, FrameIndex:i32<3>, undef:i32
+  t18: ch,glue = CopyToReg t47, Register:i32 $v0, Constant:i32<0>
+      t4: ch = store<(store 4 into %ir.retval)> t0, Constant:i32<0>, FrameIndex:i32<0>, undef:i32
+    t23: ch = store<(store 4 into %ir.a)> t4, Constant:i32<1093664768>, FrameIndex:i32<1>, undef:i32
+  t21: ch = store<(store 4 into %ir.b)> t23, Constant:i32<1102053376>, FrameIndex:i32<2>, undef:i32
+  t24: i32,ch = load<(load 4 from %ir.b)> t21, FrameIndex:i32<2>, undef:i32
+  t25: i32,ch = load<(load 4 from %ir.a)> t21, FrameIndex:i32<1>, undef:i32
+  t29: ch,glue = callseq_start t0, TargetConstant:i32<8>, TargetConstant:i32<0>
+      t34: i32 = Cpu0ISD::Wrapper Register:i32 $gp, TargetExternalSymbol:i32'__mulsf3' [TF=2]
+    t35: i32,ch = load<(load 4 from call-entry &__mulsf3)> t29, t34, undef:i32
+  t37: ch,glue = CopyToReg t29, Register:i32 $t9, t35
+  t39: ch,glue = CopyToReg t37, Register:i32 $a0, t25, t37:1
+  t41: ch,glue = CopyToReg t39, Register:i32 $a1, t24, t39:1
+    t42: ch,glue = CopyToReg t41, Register:i32 $gp, Register:i32 $gp, t41:1
+  t44: ch,glue = Cpu0ISD::JmpLink t29, Register:i32 $t9, Register:i32 $a0, Register:i32 $a1, Register:i32 $gp, RegisterMask:Untyped, t42:1
+  t45: ch,glue = callseq_end t44, TargetConstant:i32<8>, TargetConstant:i32<0>, t44:1
+  t19: ch = Cpu0ISD::Ret t18, Register:i32 $v0, t18:1
+
+
+
+Legalizing: t19: ch = Cpu0ISD::Ret t18, Register:i32 $v0, t18:1
+Legal node: nothing to do
+
+Legalizing: t18: ch,glue = CopyToReg t47, Register:i32 $v0, Constant:i32<0>
+Legal node: nothing to do
+
+Legalizing: t47: ch = store<(store 4 into %ir.c)> t15, t46, FrameIndex:i32<3>, undef:i32
+Legalizing store operation
+Optimizing float store operations
+Legal store
+
+Legalizing: t46: i32,ch,glue = CopyFromReg t45, Register:i32 $v0, t45:1
+Legal node: nothing to do
+
+Legalizing: t45: ch,glue = callseq_end t44, TargetConstant:i32<8>, TargetConstant:i32<0>, t44:1
+
+Legalizing: t44: ch,glue = Cpu0ISD::JmpLink t29, Register:i32 $t9, Register:i32 $a0, Register:i32 $a1, Register:i32 $gp, RegisterMask:Untyped, t42:1
+Legal node: nothing to do
+
+Legalizing: t42: ch,glue = CopyToReg t41, Register:i32 $gp, Register:i32 $gp, t41:1
+Legal node: nothing to do
+
+Legalizing: t41: ch,glue = CopyToReg t39, Register:i32 $a1, t24, t39:1
+Legal node: nothing to do
+
+Legalizing: t15: ch = TokenFactor t25:1, t24:1
+Legal node: nothing to do
+
+Legalizing: t39: ch,glue = CopyToReg t37, Register:i32 $a0, t25, t37:1
+Legal node: nothing to do
+
+Legalizing: t24: i32,ch = load<(load 4 from %ir.b)> t21, FrameIndex:i32<2>, undef:i32
+Legalizing non-extending load operation
+
+Legalizing: t25: i32,ch = load<(load 4 from %ir.a)> t21, FrameIndex:i32<1>, undef:i32
+Legalizing non-extending load operation
+
+Legalizing: t37: ch,glue = CopyToReg t29, Register:i32 $t9, t35
+Legal node: nothing to do
+
+Legalizing: t21: ch = store<(store 4 into %ir.b)> t23, Constant:i32<1102053376>, FrameIndex:i32<2>, undef:i32
+Legalizing store operation
+Optimizing float store operations
+Legal store
+
+Legalizing: t35: i32,ch = load<(load 4 from call-entry &__mulsf3)> t29, t34, undef:i32
+Legalizing non-extending load operation
+
+Legalizing: t23: ch = store<(store 4 into %ir.a)> t4, Constant:i32<1093664768>, FrameIndex:i32<1>, undef:i32
+Legalizing store operation
+Optimizing float store operations
+Legal store
+
+Legalizing: t34: i32 = Cpu0ISD::Wrapper Register:i32 $gp, TargetExternalSymbol:i32'__mulsf3' [TF=2]
+Legal node: nothing to do
+
+Legalizing: t29: ch,glue = callseq_start t0, TargetConstant:i32<8>, TargetConstant:i32<0>
+
+Legalizing: t4: ch = store<(store 4 into %ir.retval)> t0, Constant:i32<0>, FrameIndex:i32<0>, undef:i32
+Legalizing store operation
+Optimizing float store operations
+Legal store
+
+Legalizing: t43: Untyped = RegisterMask
+Legal node: nothing to do
+
+Legalizing: t40: i32 = Register $a1
+
+Legalizing: t38: i32 = Register $a0
+
+Legalizing: t36: i32 = Register $t9
+
+Legalizing: t33: i32 = TargetExternalSymbol'__mulsf3' [TF=2]
+Legal node: nothing to do
+
+Legalizing: t32: i32 = Register $gp
+
+Legalizing: t28: i32 = TargetConstant<0>
+
+Legalizing: t27: i32 = TargetConstant<8>
+
+Legalizing: t22: i32 = Constant<1093664768>
+Legal node: nothing to do
+
+Legalizing: t20: i32 = Constant<1102053376>
+Legal node: nothing to do
+
+Legalizing: t17: i32 = Register $v0
+
+Legalizing: t14: i32 = FrameIndex<3>
+Legal node: nothing to do
+
+Legalizing: t9: i32 = FrameIndex<2>
+Legal node: nothing to do
+
+Legalizing: t6: i32 = FrameIndex<1>
+Legal node: nothing to do
+
+Legalizing: t3: i32 = undef
+Legal node: nothing to do
+
+Legalizing: t2: i32 = FrameIndex<0>
+Legal node: nothing to do
+
+Legalizing: t1: i32 = Constant<0>
+Legal node: nothing to do
+
+Legalizing: t0: ch = EntryToken
+Legal node: nothing to do
+Legalized selection DAG: %bb.0 'main:entry'
+SelectionDAG has 37 nodes:
+  t0: ch = EntryToken
+  t29: ch,glue = callseq_start t0, TargetConstant:i32<8>, TargetConstant:i32<0>
+      t4: ch = store<(store 4 into %ir.retval)> t0, Constant:i32<0>, FrameIndex:i32<0>, undef:i32
+    t23: ch = store<(store 4 into %ir.a)> t4, Constant:i32<1093664768>, FrameIndex:i32<1>, undef:i32
+  t21: ch = store<(store 4 into %ir.b)> t23, Constant:i32<1102053376>, FrameIndex:i32<2>, undef:i32
+      t34: i32 = Cpu0ISD::Wrapper Register:i32 $gp, TargetExternalSymbol:i32'__mulsf3' [TF=2]
+    t35: i32,ch = load<(load 4 from call-entry &__mulsf3)> t29, t34, undef:i32
+  t37: ch,glue = CopyToReg t29, Register:i32 $t9, t35
+  t25: i32,ch = load<(load 4 from %ir.a)> t21, FrameIndex:i32<1>, undef:i32
+  t24: i32,ch = load<(load 4 from %ir.b)> t21, FrameIndex:i32<2>, undef:i32
+  t39: ch,glue = CopyToReg t37, Register:i32 $a0, t25, t37:1
+  t41: ch,glue = CopyToReg t39, Register:i32 $a1, t24, t39:1
+    t42: ch,glue = CopyToReg t41, Register:i32 $gp, Register:i32 $gp, t41:1
+  t44: ch,glue = Cpu0ISD::JmpLink t29, Register:i32 $t9, Register:i32 $a0, Register:i32 $a1, Register:i32 $gp, RegisterMask:Untyped, t42:1
+  t45: ch,glue = callseq_end t44, TargetConstant:i32<8>, TargetConstant:i32<0>, t44:1
+      t15: ch = TokenFactor t25:1, t24:1
+      t46: i32,ch,glue = CopyFromReg t45, Register:i32 $v0, t45:1
+    t47: ch = store<(store 4 into %ir.c)> t15, t46, FrameIndex:i32<3>, undef:i32
+  t18: ch,glue = CopyToReg t47, Register:i32 $v0, Constant:i32<0>
+  t19: ch = Cpu0ISD::Ret t18, Register:i32 $v0, t18:1
+
+
+
+Legalizing: t19: ch = Cpu0ISD::Ret t18, Register:i32 $v0, t18:1
+Legal node: nothing to do
+
+Combining: t19: ch = Cpu0ISD::Ret t18, Register:i32 $v0, t18:1
+
+Legalizing: t18: ch,glue = CopyToReg t47, Register:i32 $v0, Constant:i32<0>
+Legal node: nothing to do
+
+Combining: t18: ch,glue = CopyToReg t47, Register:i32 $v0, Constant:i32<0>
+
+Legalizing: t47: ch = store<(store 4 into %ir.c)> t15, t46, FrameIndex:i32<3>, undef:i32
+Legalizing store operation
+Optimizing float store operations
+Legal store
+
+Combining: t47: ch = store<(store 4 into %ir.c)> t15, t46, FrameIndex:i32<3>, undef:i32
+
+Legalizing: t46: i32,ch,glue = CopyFromReg t45, Register:i32 $v0, t45:1
+Legal node: nothing to do
+
+Combining: t46: i32,ch,glue = CopyFromReg t45, Register:i32 $v0, t45:1
+
+Legalizing: t45: ch,glue = callseq_end t44, TargetConstant:i32<8>, TargetConstant:i32<0>, t44:1
+
+Combining: t45: ch,glue = callseq_end t44, TargetConstant:i32<8>, TargetConstant:i32<0>, t44:1
+
+Legalizing: t44: ch,glue = Cpu0ISD::JmpLink t29, Register:i32 $t9, Register:i32 $a0, Register:i32 $a1, Register:i32 $gp, RegisterMask:Untyped, t42:1
+Legal node: nothing to do
+
+Combining: t44: ch,glue = Cpu0ISD::JmpLink t29, Register:i32 $t9, Register:i32 $a0, Register:i32 $a1, Register:i32 $gp, RegisterMask:Untyped, t42:1
+
+Legalizing: t42: ch,glue = CopyToReg t41, Register:i32 $gp, Register:i32 $gp, t41:1
+Legal node: nothing to do
+
+Combining: t42: ch,glue = CopyToReg t41, Register:i32 $gp, Register:i32 $gp, t41:1
+
+Legalizing: t41: ch,glue = CopyToReg t39, Register:i32 $a1, t24, t39:1
+Legal node: nothing to do
+
+Combining: t41: ch,glue = CopyToReg t39, Register:i32 $a1, t24, t39:1
+
+Legalizing: t15: ch = TokenFactor t25:1, t24:1
+Legal node: nothing to do
+
+Combining: t15: ch = TokenFactor t25:1, t24:1
+
+Legalizing: t39: ch,glue = CopyToReg t37, Register:i32 $a0, t25, t37:1
+Legal node: nothing to do
+
+Combining: t39: ch,glue = CopyToReg t37, Register:i32 $a0, t25, t37:1
+
+Legalizing: t24: i32,ch = load<(load 4 from %ir.b)> t21, FrameIndex:i32<2>, undef:i32
+Legalizing non-extending load operation
+
+Combining: t24: i32,ch = load<(load 4 from %ir.b)> t21, FrameIndex:i32<2>, undef:i32
+
+Legalizing: t25: i32,ch = load<(load 4 from %ir.a)> t21, FrameIndex:i32<1>, undef:i32
+Legalizing non-extending load operation
+
+Combining: t25: i32,ch = load<(load 4 from %ir.a)> t21, FrameIndex:i32<1>, undef:i32
+
+Legalizing: t37: ch,glue = CopyToReg t29, Register:i32 $t9, t35
+Legal node: nothing to do
+
+Combining: t37: ch,glue = CopyToReg t29, Register:i32 $t9, t35
+
+Legalizing: t21: ch = store<(store 4 into %ir.b)> t23, Constant:i32<1102053376>, FrameIndex:i32<2>, undef:i32
+Legalizing store operation
+Optimizing float store operations
+Legal store
+
+Combining: t21: ch = store<(store 4 into %ir.b)> t23, Constant:i32<1102053376>, FrameIndex:i32<2>, undef:i32
+
+Legalizing: t35: i32,ch = load<(load 4 from call-entry &__mulsf3)> t29, t34, undef:i32
+Legalizing non-extending load operation
+
+Combining: t35: i32,ch = load<(load 4 from call-entry &__mulsf3)> t29, t34, undef:i32
+
+Legalizing: t23: ch = store<(store 4 into %ir.a)> t4, Constant:i32<1093664768>, FrameIndex:i32<1>, undef:i32
+Legalizing store operation
+Optimizing float store operations
+Legal store
+
+Combining: t23: ch = store<(store 4 into %ir.a)> t4, Constant:i32<1093664768>, FrameIndex:i32<1>, undef:i32
+
+Legalizing: t34: i32 = Cpu0ISD::Wrapper Register:i32 $gp, TargetExternalSymbol:i32'__mulsf3' [TF=2]
+Legal node: nothing to do
+
+Combining: t34: i32 = Cpu0ISD::Wrapper Register:i32 $gp, TargetExternalSymbol:i32'__mulsf3' [TF=2]
+
+Legalizing: t29: ch,glue = callseq_start t0, TargetConstant:i32<8>, TargetConstant:i32<0>
+
+Combining: t29: ch,glue = callseq_start t0, TargetConstant:i32<8>, TargetConstant:i32<0>
+
+Legalizing: t4: ch = store<(store 4 into %ir.retval)> t0, Constant:i32<0>, FrameIndex:i32<0>, undef:i32
+Legalizing store operation
+Optimizing float store operations
+Legal store
+
+Combining: t4: ch = store<(store 4 into %ir.retval)> t0, Constant:i32<0>, FrameIndex:i32<0>, undef:i32
+
+Legalizing: t43: Untyped = RegisterMask
+Legal node: nothing to do
+
+Combining: t43: Untyped = RegisterMask
+
+Legalizing: t40: i32 = Register $a1
+
+Combining: t40: i32 = Register $a1
+
+Legalizing: t38: i32 = Register $a0
+
+Combining: t38: i32 = Register $a0
+
+Legalizing: t36: i32 = Register $t9
+
+Combining: t36: i32 = Register $t9
+
+Legalizing: t33: i32 = TargetExternalSymbol'__mulsf3' [TF=2]
+Legal node: nothing to do
+
+Combining: t33: i32 = TargetExternalSymbol'__mulsf3' [TF=2]
+
+Legalizing: t32: i32 = Register $gp
+
+Combining: t32: i32 = Register $gp
+
+Legalizing: t28: i32 = TargetConstant<0>
+
+Combining: t28: i32 = TargetConstant<0>
+
+Legalizing: t27: i32 = TargetConstant<8>
+
+Combining: t27: i32 = TargetConstant<8>
+
+Legalizing: t22: i32 = Constant<1093664768>
+Legal node: nothing to do
+
+Combining: t22: i32 = Constant<1093664768>
+
+Legalizing: t20: i32 = Constant<1102053376>
+Legal node: nothing to do
+
+Combining: t20: i32 = Constant<1102053376>
+
+Legalizing: t17: i32 = Register $v0
+
+Combining: t17: i32 = Register $v0
+
+Legalizing: t14: i32 = FrameIndex<3>
+Legal node: nothing to do
+
+Combining: t14: i32 = FrameIndex<3>
+
+Legalizing: t9: i32 = FrameIndex<2>
+Legal node: nothing to do
+
+Combining: t9: i32 = FrameIndex<2>
+
+Legalizing: t6: i32 = FrameIndex<1>
+Legal node: nothing to do
+
+Combining: t6: i32 = FrameIndex<1>
+
+Legalizing: t3: i32 = undef
+Legal node: nothing to do
+
+Combining: t3: i32 = undef
+
+Legalizing: t2: i32 = FrameIndex<0>
+Legal node: nothing to do
+
+Combining: t2: i32 = FrameIndex<0>
+
+Legalizing: t1: i32 = Constant<0>
+Legal node: nothing to do
+
+Combining: t1: i32 = Constant<0>
+
+Legalizing: t0: ch = EntryToken
+Legal node: nothing to do
+
+Combining: t0: ch = EntryToken
+Optimized legalized selection DAG: %bb.0 'main:entry'
+SelectionDAG has 37 nodes:
+  t0: ch = EntryToken
+  t29: ch,glue = callseq_start t0, TargetConstant:i32<8>, TargetConstant:i32<0>
+      t4: ch = store<(store 4 into %ir.retval)> t0, Constant:i32<0>, FrameIndex:i32<0>, undef:i32
+    t23: ch = store<(store 4 into %ir.a)> t4, Constant:i32<1093664768>, FrameIndex:i32<1>, undef:i32
+  t21: ch = store<(store 4 into %ir.b)> t23, Constant:i32<1102053376>, FrameIndex:i32<2>, undef:i32
+      t34: i32 = Cpu0ISD::Wrapper Register:i32 $gp, TargetExternalSymbol:i32'__mulsf3' [TF=2]
+    t35: i32,ch = load<(load 4 from call-entry &__mulsf3)> t29, t34, undef:i32
+  t37: ch,glue = CopyToReg t29, Register:i32 $t9, t35
+  t25: i32,ch = load<(load 4 from %ir.a)> t21, FrameIndex:i32<1>, undef:i32
+  t24: i32,ch = load<(load 4 from %ir.b)> t21, FrameIndex:i32<2>, undef:i32
+  t39: ch,glue = CopyToReg t37, Register:i32 $a0, t25, t37:1
+  t41: ch,glue = CopyToReg t39, Register:i32 $a1, t24, t39:1
+    t42: ch,glue = CopyToReg t41, Register:i32 $gp, Register:i32 $gp, t41:1
+  t44: ch,glue = Cpu0ISD::JmpLink t29, Register:i32 $t9, Register:i32 $a0, Register:i32 $a1, Register:i32 $gp, RegisterMask:Untyped, t42:1
+  t45: ch,glue = callseq_end t44, TargetConstant:i32<8>, TargetConstant:i32<0>, t44:1
+      t15: ch = TokenFactor t25:1, t24:1
+      t46: i32,ch,glue = CopyFromReg t45, Register:i32 $v0, t45:1
+    t47: ch = store<(store 4 into %ir.c)> t15, t46, FrameIndex:i32<3>, undef:i32
+  t18: ch,glue = CopyToReg t47, Register:i32 $v0, Constant:i32<0>
+  t19: ch = Cpu0ISD::Ret t18, Register:i32 $v0, t18:1
+
+
+===== Instruction selection begins: %bb.0 'entry'
+
+ISEL: Starting selection on root node: t19: ch = Cpu0ISD::Ret t18, Register:i32 $v0, t18:1
+ISEL: Starting pattern match
+  Morphed node: t19: ch = RetLR Register:i32 $v0, t18, t18:1
+ISEL: Match complete!
+
+ISEL: Starting selection on root node: t18: ch,glue = CopyToReg t47, Register:i32 $v0, Constant:i32<0>
+
+ISEL: Starting selection on root node: t47: ch = store<(store 4 into %ir.c)> t15, t46, FrameIndex:i32<3>, undef:i32
+ISEL: Starting pattern match
+  Initial Opcode index to 172
+  Morphed node: t47: ch = ST<Mem:(store 4 into %ir.c)> t46, TargetFrameIndex:i32<3>, TargetConstant:i32<0>, t15
+ISEL: Match complete!
+
+ISEL: Starting selection on root node: t46: i32,ch,glue = CopyFromReg t45, Register:i32 $v0, t45:1
+
+ISEL: Starting selection on root node: t45: ch,glue = callseq_end t44, TargetConstant:i32<8>, TargetConstant:i32<0>, t44:1
+ISEL: Starting pattern match
+  Initial Opcode index to 1585
+  Morphed node: t45: i32,ch,glue = ADJCALLSTACKUP TargetConstant:i32<8>, TargetConstant:i32<0>, t44, t44:1
+ISEL: Match complete!
+
+ISEL: Starting selection on root node: t44: ch,glue = Cpu0ISD::JmpLink t29, Register:i32 $t9, Register:i32 $a0, Register:i32 $a1, Register:i32 $gp, RegisterMask:Untyped, t42:1
+ISEL: Starting pattern match
+  Initial Opcode index to 2857
+  Match failed at index 2863
+  Continuing at 2910
+  Morphed node: t44: ch,glue = JALR Register:i32 $t9, Register:i32 $a0, Register:i32 $a1, Register:i32 $gp, RegisterMask:Untyped, t29, t42:1
+ISEL: Match complete!
+
+ISEL: Starting selection on root node: t42: ch,glue = CopyToReg t41, Register:i32 $gp, Register:i32 $gp, t41:1
+
+ISEL: Starting selection on root node: t41: ch,glue = CopyToReg t39, Register:i32 $a1, t24, t39:1
+
+ISEL: Starting selection on root node: t15: ch = TokenFactor t25:1, t24:1
+
+ISEL: Starting selection on root node: t39: ch,glue = CopyToReg t37, Register:i32 $a0, t25, t37:1
+
+ISEL: Starting selection on root node: t24: i32,ch = load<(load 4 from %ir.b)> t21, FrameIndex:i32<2>, undef:i32
+ISEL: Starting pattern match
+  Initial Opcode index to 5
+  Morphed node: t24: i32,ch = LD<Mem:(load 4 from %ir.b)> TargetFrameIndex:i32<2>, TargetConstant:i32<0>, t21
+ISEL: Match complete!
+
+ISEL: Starting selection on root node: t25: i32,ch = load<(load 4 from %ir.a)> t21, FrameIndex:i32<1>, undef:i32
+ISEL: Starting pattern match
+  Initial Opcode index to 5
+  Morphed node: t25: i32,ch = LD<Mem:(load 4 from %ir.a)> TargetFrameIndex:i32<1>, TargetConstant:i32<0>, t21
+ISEL: Match complete!
+
+ISEL: Starting selection on root node: t37: ch,glue = CopyToReg t29, Register:i32 $t9, t35
+
+ISEL: Starting selection on root node: t21: ch = store<(store 4 into %ir.b)> t23, Constant:i32<1102053376>, FrameIndex:i32<2>, undef:i32
+ISEL: Starting pattern match
+  Initial Opcode index to 172
+  Morphed node: t21: ch = ST<Mem:(store 4 into %ir.b)> Constant:i32<1102053376>, TargetFrameIndex:i32<2>, TargetConstant:i32<0>, t23
+ISEL: Match complete!
+
+ISEL: Starting selection on root node: t35: i32,ch = load<(load 4 from call-entry &__mulsf3)> t29, t34, undef:i32
+ISEL: Starting pattern match
+  Initial Opcode index to 5
+  Morphed node: t35: i32,ch = LD<Mem:(load 4 from call-entry &__mulsf3)> Register:i32 $gp, TargetExternalSymbol:i32'__mulsf3' [TF=2], t29
+ISEL: Match complete!
+
+ISEL: Starting selection on root node: t23: ch = store<(store 4 into %ir.a)> t4, Constant:i32<1093664768>, FrameIndex:i32<1>, undef:i32
+ISEL: Starting pattern match
+  Initial Opcode index to 172
+  Morphed node: t23: ch = ST<Mem:(store 4 into %ir.a)> Constant:i32<1093664768>, TargetFrameIndex:i32<1>, TargetConstant:i32<0>, t4
+ISEL: Match complete!
+
+ISEL: Starting selection on root node: t29: ch,glue = callseq_start t0, TargetConstant:i32<8>, TargetConstant:i32<0>
+ISEL: Starting pattern match
+  Initial Opcode index to 1558
+  Morphed node: t29: i32,ch,glue = ADJCALLSTACKDOWN TargetConstant:i32<8>, TargetConstant:i32<0>, t0
+ISEL: Match complete!
+
+ISEL: Starting selection on root node: t4: ch = store<(store 4 into %ir.retval)> t0, Constant:i32<0>, FrameIndex:i32<0>, undef:i32
+ISEL: Starting pattern match
+  Initial Opcode index to 172
+  Morphed node: t4: ch = ST<Mem:(store 4 into %ir.retval)> Constant:i32<0>, TargetFrameIndex:i32<0>, TargetConstant:i32<0>, t0
+ISEL: Match complete!
+
+ISEL: Starting selection on root node: t43: Untyped = RegisterMask
+
+ISEL: Starting selection on root node: t40: i32 = Register $a1
+
+ISEL: Starting selection on root node: t38: i32 = Register $a0
+
+ISEL: Starting selection on root node: t36: i32 = Register $t9
+
+ISEL: Starting selection on root node: t33: i32 = TargetExternalSymbol'__mulsf3' [TF=2]
+
+ISEL: Starting selection on root node: t32: i32 = Register $gp
+
+ISEL: Starting selection on root node: t28: i32 = TargetConstant<0>
+
+ISEL: Starting selection on root node: t27: i32 = TargetConstant<8>
+
+ISEL: Starting selection on root node: t22: i32 = Constant<1093664768>
+ISEL: Starting pattern match
+  Initial Opcode index to 3185
+  Skipped scope entry (due to false predicate) at index 3188, continuing at 3203
+  Skipped scope entry (due to false predicate) at index 3204, continuing at 3221
+Creating constant: t52: i32 = TargetConstant<1093664768>
+Creating constant: t53: i32 = TargetConstant<16688>
+  Morphed node: t22: i32 = LUi TargetConstant:i32<16688>
+ISEL: Match complete!
+
+ISEL: Starting selection on root node: t20: i32 = Constant<1102053376>
+ISEL: Starting pattern match
+  Initial Opcode index to 3185
+  Skipped scope entry (due to false predicate) at index 3188, continuing at 3203
+  Skipped scope entry (due to false predicate) at index 3204, continuing at 3221
+Creating constant: t54: i32 = TargetConstant<1102053376>
+Creating constant: t55: i32 = TargetConstant<16816>
+  Morphed node: t20: i32 = LUi TargetConstant:i32<16816>
+ISEL: Match complete!
+
+ISEL: Starting selection on root node: t17: i32 = Register $v0
+
+ISEL: Starting selection on root node: t1: i32 = Constant<0>
+ISEL: Starting pattern match
+  Initial Opcode index to 3185
+  Morphed node: t1: i32 = ADDiu Register:i32 $zero, TargetConstant:i32<0>
+ISEL: Match complete!
+
+ISEL: Starting selection on root node: t0: ch = EntryToken
+
+===== Instruction selection ends:
+Selected selection DAG: %bb.0 'main:entry'
+SelectionDAG has 40 nodes:
+  t0: ch = EntryToken
+  t1: i32 = ADDiu Register:i32 $zero, TargetConstant:i32<0>
+  t29: i32,ch,glue = ADJCALLSTACKDOWN TargetConstant:i32<8>, TargetConstant:i32<0>, t0
+    t20: i32 = LUi TargetConstant:i32<16816>
+      t22: i32 = LUi TargetConstant:i32<16688>
+      t4: ch = ST<Mem:(store 4 into %ir.retval)> t1, TargetFrameIndex:i32<0>, TargetConstant:i32<0>, t0
+    t23: ch = ST<Mem:(store 4 into %ir.a)> t22, TargetFrameIndex:i32<1>, TargetConstant:i32<0>, t4
+  t21: ch = ST<Mem:(store 4 into %ir.b)> t20, TargetFrameIndex:i32<2>, TargetConstant:i32<0>, t23
+    t35: i32,ch = LD<Mem:(load 4 from call-entry &__mulsf3)> Register:i32 $gp, TargetExternalSymbol:i32'__mulsf3' [TF=2], t29:1
+  t37: ch,glue = CopyToReg t29:1, Register:i32 $t9, t35
+  t25: i32,ch = LD<Mem:(load 4 from %ir.a)> TargetFrameIndex:i32<1>, TargetConstant:i32<0>, t21
+  t24: i32,ch = LD<Mem:(load 4 from %ir.b)> TargetFrameIndex:i32<2>, TargetConstant:i32<0>, t21
+  t39: ch,glue = CopyToReg t37, Register:i32 $a0, t25, t37:1
+  t41: ch,glue = CopyToReg t39, Register:i32 $a1, t24, t39:1
+    t42: ch,glue = CopyToReg t41, Register:i32 $gp, Register:i32 $gp, t41:1
+  t44: ch,glue = JALR Register:i32 $t9, Register:i32 $a0, Register:i32 $a1, Register:i32 $gp, RegisterMask:Untyped, t29:1, t42:1
+  t45: i32,ch,glue = ADJCALLSTACKUP TargetConstant:i32<8>, TargetConstant:i32<0>, t44, t44:1
+      t46: i32,ch,glue = CopyFromReg t45:1, Register:i32 $v0, t45:2
+      t15: ch = TokenFactor t25:1, t24:1
+    t47: ch = ST<Mem:(store 4 into %ir.c)> t46, TargetFrameIndex:i32<3>, TargetConstant:i32<0>, t15
+  t18: ch,glue = CopyToReg t47, Register:i32 $v0, t1
+  t52: i32 = TargetConstant<1093664768>
+  t54: i32 = TargetConstant<1102053376>
+  t19: ch = RetLR Register:i32 $v0, t18, t18:1
+
+
+********** List Scheduling %bb.0 'entry' **********
+SU(0): t19: ch = RetLR Register:i32 $v0, t18, t18:1
+
+    t18: ch,glue = CopyToReg t47, Register:i32 $v0, t1
+
+  # preds left       : 2
+  # succs left       : 0
+  # rdefs left       : 0
+  Latency            : 1
+  Depth              : 7
+  Height             : 0
+  Predecessors:
+    SU(2): Ord  Latency=1 Barrier
+    SU(1): Data Latency=1
+SU(1): t1: i32 = ADDiu Register:i32 $zero, TargetConstant:i32<0>
+
+  # preds left       : 0
+  # succs left       : 2
+  # rdefs left       : 1
+  Latency            : 1
+  Depth              : 0
+  Height             : 7
+  Successors:
+    SU(0): Data Latency=1
+    SU(7): Data Latency=1
+SU(2): t47: ch = ST<Mem:(store 4 into %ir.c)> t46, TargetFrameIndex:i32<3>, TargetConstant:i32<0>, t15
+
+  # preds left       : 2
+  # succs left       : 1
+  # rdefs left       : 0
+  Latency            : 1
+  Depth              : 6
+  Height             : 1
+  Predecessors:
+    SU(11): Data Latency=1
+    SU(3): Ord  Latency=0 Barrier
+  Successors:
+    SU(0): Ord  Latency=1 Barrier
+SU(3): t15: ch = TokenFactor t25:1, t24:1
+
+  # preds left       : 2
+  # succs left       : 1
+  # rdefs left       : 0
+  Latency            : 0
+  Depth              : 5
+  Height             : 1
+  Predecessors:
+    SU(10): Ord  Latency=1 Barrier
+    SU(4): Ord  Latency=1 Barrier
+  Successors:
+    SU(2): Ord  Latency=0 Barrier
+SU(4): t24: i32,ch = LD<Mem:(load 4 from %ir.b)> TargetFrameIndex:i32<2>, TargetConstant:i32<0>, t21
+
+  # preds left       : 1
+  # succs left       : 2
+  # rdefs left       : 1
+  Latency            : 1
+  Depth              : 4
+  Height             : 3
+  Predecessors:
+    SU(5): Ord  Latency=1 Barrier
+  Successors:
+    SU(3): Ord  Latency=1 Barrier
+    SU(11): Data Latency=1
+SU(5): t21: ch = ST<Mem:(store 4 into %ir.b)> t20, TargetFrameIndex:i32<2>, TargetConstant:i32<0>, t23
+
+  # preds left       : 2
+  # succs left       : 2
+  # rdefs left       : 0
+  Latency            : 1
+  Depth              : 3
+  Height             : 4
+  Predecessors:
+    SU(9): Data Latency=1
+    SU(6): Ord  Latency=1 Barrier
+  Successors:
+    SU(4): Ord  Latency=1 Barrier
+    SU(10): Ord  Latency=1 Barrier
+SU(6): t23: ch = ST<Mem:(store 4 into %ir.a)> t22, TargetFrameIndex:i32<1>, TargetConstant:i32<0>, t4
+
+  # preds left       : 2
+  # succs left       : 1
+  # rdefs left       : 0
+  Latency            : 1
+  Depth              : 2
+  Height             : 5
+  Predecessors:
+    SU(8): Data Latency=1
+    SU(7): Ord  Latency=1 Barrier
+  Successors:
+    SU(5): Ord  Latency=1 Barrier
+SU(7): t4: ch = ST<Mem:(store 4 into %ir.retval)> t1, TargetFrameIndex:i32<0>, TargetConstant:i32<0>, t0
+
+  # preds left       : 1
+  # succs left       : 1
+  # rdefs left       : 0
+  Latency            : 1
+  Depth              : 1
+  Height             : 6
+  Predecessors:
+    SU(1): Data Latency=1
+  Successors:
+    SU(6): Ord  Latency=1 Barrier
+SU(8): t22: i32 = LUi TargetConstant:i32<16688>
+
+  # preds left       : 0
+  # succs left       : 1
+  # rdefs left       : 1
+  Latency            : 1
+  Depth              : 0
+  Height             : 6
+  Successors:
+    SU(6): Data Latency=1
+SU(9): t20: i32 = LUi TargetConstant:i32<16816>
+
+  # preds left       : 0
+  # succs left       : 1
+  # rdefs left       : 1
+  Latency            : 1
+  Depth              : 0
+  Height             : 5
+  Successors:
+    SU(5): Data Latency=1
+SU(10): t25: i32,ch = LD<Mem:(load 4 from %ir.a)> TargetFrameIndex:i32<1>, TargetConstant:i32<0>, t21
+
+  # preds left       : 1
+  # succs left       : 2
+  # rdefs left       : 1
+  Latency            : 1
+  Depth              : 4
+  Height             : 3
+  Predecessors:
+    SU(5): Ord  Latency=1 Barrier
+  Successors:
+    SU(3): Ord  Latency=1 Barrier
+    SU(11): Data Latency=1
+SU(11): t46: i32,ch,glue = CopyFromReg t45:1, Register:i32 $v0, t45:2
+
+    t37: ch,glue = CopyToReg t29:1, Register:i32 $t9, t35
+
+    t39: ch,glue = CopyToReg t37, Register:i32 $a0, t25, t37:1
+
+    t41: ch,glue = CopyToReg t39, Register:i32 $a1, t24, t39:1
+
+    t42: ch,glue = CopyToReg t41, Register:i32 $gp, Register:i32 $gp, t41:1
+
+    t44: ch,glue = JALR Register:i32 $t9, Register:i32 $a0, Register:i32 $a1, Register:i32 $gp, RegisterMask:Untyped, t29:1, t42:1
+
+    t45: i32,ch,glue = ADJCALLSTACKUP TargetConstant:i32<8>, TargetConstant:i32<0>, t44, t44:1
+
+  # preds left       : 4
+  # succs left       : 1
+  # rdefs left       : 1
+  Latency            : 1
+  Depth              : 5
+  Height             : 2
+  Predecessors:
+    SU(13): Ord  Latency=1 Barrier
+    SU(4): Data Latency=1
+    SU(10): Data Latency=1
+    SU(12): Data Latency=1
+  Successors:
+    SU(2): Data Latency=1
+SU(12): t35: i32,ch = LD<Mem:(load 4 from call-entry &__mulsf3)> Register:i32 $gp, TargetExternalSymbol:i32'__mulsf3' [TF=2], t29:1
+
+  # preds left       : 1
+  # succs left       : 1
+  # rdefs left       : 1
+  Latency            : 1
+  Depth              : 1
+  Height             : 3
+  Predecessors:
+    SU(13): Ord  Latency=1 Barrier
+  Successors:
+    SU(11): Data Latency=1
+SU(13): t29: i32,ch,glue = ADJCALLSTACKDOWN TargetConstant:i32<8>, TargetConstant:i32<0>, t0
+
+  # preds left       : 0
+  # succs left       : 2
+  # rdefs left       : 0
+  Latency            : 1
+  Depth              : 0
+  Height             : 4
+  Successors:
+    SU(11): Ord  Latency=1 Barrier
+    SU(12): Ord  Latency=1 Barrier
+
+Examining Available:
+Height 0: SU(0): t19: ch = RetLR Register:i32 $v0, t18, t18:1
+
+    t18: ch,glue = CopyToReg t47, Register:i32 $v0, t1
+
+
+*** Scheduling [0]: SU(0): t19: ch = RetLR Register:i32 $v0, t18, t18:1
+
+    t18: ch,glue = CopyToReg t47, Register:i32 $v0, t1
+
+
+Examining Available:
+Height 1: SU(2): t47: ch = ST<Mem:(store 4 into %ir.c)> t46, TargetFrameIndex:i32<3>, TargetConstant:i32<0>, t15
+
+
+*** Scheduling [1]: SU(2): t47: ch = ST<Mem:(store 4 into %ir.c)> t46, TargetFrameIndex:i32<3>, TargetConstant:i32<0>, t15
+
+
+Examining Available:
+Height 1: SU(3): t15: ch = TokenFactor t25:1, t24:1
+
+Height 2: SU(11): t46: i32,ch,glue = CopyFromReg t45:1, Register:i32 $v0, t45:2
+
+    t37: ch,glue = CopyToReg t29:1, Register:i32 $t9, t35
+
+    t39: ch,glue = CopyToReg t37, Register:i32 $a0, t25, t37:1
+
+    t41: ch,glue = CopyToReg t39, Register:i32 $a1, t24, t39:1
+
+    t42: ch,glue = CopyToReg t41, Register:i32 $gp, Register:i32 $gp, t41:1
+
+    t44: ch,glue = JALR Register:i32 $t9, Register:i32 $a0, Register:i32 $a1, Register:i32 $gp, RegisterMask:Untyped, t29:1, t42:1
+
+    t45: i32,ch,glue = ADJCALLSTACKUP TargetConstant:i32<8>, TargetConstant:i32<0>, t44, t44:1
+
+
+*** Scheduling [2]: SU(3): t15: ch = TokenFactor t25:1, t24:1
+
+
+Examining Available:
+Height 2: SU(11): t46: i32,ch,glue = CopyFromReg t45:1, Register:i32 $v0, t45:2
+
+    t37: ch,glue = CopyToReg t29:1, Register:i32 $t9, t35
+
+    t39: ch,glue = CopyToReg t37, Register:i32 $a0, t25, t37:1
+
+    t41: ch,glue = CopyToReg t39, Register:i32 $a1, t24, t39:1
+
+    t42: ch,glue = CopyToReg t41, Register:i32 $gp, Register:i32 $gp, t41:1
+
+    t44: ch,glue = JALR Register:i32 $t9, Register:i32 $a0, Register:i32 $a1, Register:i32 $gp, RegisterMask:Untyped, t29:1, t42:1
+
+    t45: i32,ch,glue = ADJCALLSTACKUP TargetConstant:i32<8>, TargetConstant:i32<0>, t44, t44:1
+
+
+*** Scheduling [3]: SU(11): t46: i32,ch,glue = CopyFromReg t45:1, Register:i32 $v0, t45:2
+
+    t37: ch,glue = CopyToReg t29:1, Register:i32 $t9, t35
+
+    t39: ch,glue = CopyToReg t37, Register:i32 $a0, t25, t37:1
+
+    t41: ch,glue = CopyToReg t39, Register:i32 $a1, t24, t39:1
+
+    t42: ch,glue = CopyToReg t41, Register:i32 $gp, Register:i32 $gp, t41:1
+
+    t44: ch,glue = JALR Register:i32 $t9, Register:i32 $a0, Register:i32 $a1, Register:i32 $gp, RegisterMask:Untyped, t29:1, t42:1
+
+    t45: i32,ch,glue = ADJCALLSTACKUP TargetConstant:i32<8>, TargetConstant:i32<0>, t44, t44:1
+
+
+Examining Available:
+Height 4: SU(12): t35: i32,ch = LD<Mem:(load 4 from call-entry &__mulsf3)> Register:i32 $gp, TargetExternalSymbol:i32'__mulsf3' [TF=2], t29:1
+
+Height 4: SU(4): t24: i32,ch = LD<Mem:(load 4 from %ir.b)> TargetFrameIndex:i32<2>, TargetConstant:i32<0>, t21
+
+Height 4: SU(10): t25: i32,ch = LD<Mem:(load 4 from %ir.a)> TargetFrameIndex:i32<1>, TargetConstant:i32<0>, t21
+
+
+*** Scheduling [4]: SU(12): t35: i32,ch = LD<Mem:(load 4 from call-entry &__mulsf3)> Register:i32 $gp, TargetExternalSymbol:i32'__mulsf3' [TF=2], t29:1
+
+
+Examining Available:
+Height 5: SU(13): t29: i32,ch,glue = ADJCALLSTACKDOWN TargetConstant:i32<8>, TargetConstant:i32<0>, t0
+
+Height 4: SU(4): t24: i32,ch = LD<Mem:(load 4 from %ir.b)> TargetFrameIndex:i32<2>, TargetConstant:i32<0>, t21
+
+Height 4: SU(10): t25: i32,ch = LD<Mem:(load 4 from %ir.a)> TargetFrameIndex:i32<1>, TargetConstant:i32<0>, t21
+
+
+*** Scheduling [5]: SU(13): t29: i32,ch,glue = ADJCALLSTACKDOWN TargetConstant:i32<8>, TargetConstant:i32<0>, t0
+
+
+Examining Available:
+Height 4: SU(4): t24: i32,ch = LD<Mem:(load 4 from %ir.b)> TargetFrameIndex:i32<2>, TargetConstant:i32<0>, t21
+
+Height 4: SU(10): t25: i32,ch = LD<Mem:(load 4 from %ir.a)> TargetFrameIndex:i32<1>, TargetConstant:i32<0>, t21
+
+
+*** Scheduling [6]: SU(4): t24: i32,ch = LD<Mem:(load 4 from %ir.b)> TargetFrameIndex:i32<2>, TargetConstant:i32<0>, t21
+
+
+Examining Available:
+Height 4: SU(10): t25: i32,ch = LD<Mem:(load 4 from %ir.a)> TargetFrameIndex:i32<1>, TargetConstant:i32<0>, t21
+
+
+*** Scheduling [7]: SU(10): t25: i32,ch = LD<Mem:(load 4 from %ir.a)> TargetFrameIndex:i32<1>, TargetConstant:i32<0>, t21
+
+
+Examining Available:
+Height 8: SU(5): t21: ch = ST<Mem:(store 4 into %ir.b)> t20, TargetFrameIndex:i32<2>, TargetConstant:i32<0>, t23
+
+
+*** Scheduling [8]: SU(5): t21: ch = ST<Mem:(store 4 into %ir.b)> t20, TargetFrameIndex:i32<2>, TargetConstant:i32<0>, t23
+
+
+Examining Available:
+Height 9: SU(9): t20: i32 = LUi TargetConstant:i32<16816>
+
+Height 9: SU(6): t23: ch = ST<Mem:(store 4 into %ir.a)> t22, TargetFrameIndex:i32<1>, TargetConstant:i32<0>, t4
+
+
+*** Scheduling [9]: SU(9): t20: i32 = LUi TargetConstant:i32<16816>
+
+
+Examining Available:
+Height 9: SU(6): t23: ch = ST<Mem:(store 4 into %ir.a)> t22, TargetFrameIndex:i32<1>, TargetConstant:i32<0>, t4
+
+
+*** Scheduling [10]: SU(6): t23: ch = ST<Mem:(store 4 into %ir.a)> t22, TargetFrameIndex:i32<1>, TargetConstant:i32<0>, t4
+
+
+Examining Available:
+Height 11: SU(8): t22: i32 = LUi TargetConstant:i32<16688>
+
+Height 11: SU(7): t4: ch = ST<Mem:(store 4 into %ir.retval)> t1, TargetFrameIndex:i32<0>, TargetConstant:i32<0>, t0
+
+
+*** Scheduling [11]: SU(8): t22: i32 = LUi TargetConstant:i32<16688>
+
+
+Examining Available:
+Height 11: SU(7): t4: ch = ST<Mem:(store 4 into %ir.retval)> t1, TargetFrameIndex:i32<0>, TargetConstant:i32<0>, t0
+
+
+*** Scheduling [12]: SU(7): t4: ch = ST<Mem:(store 4 into %ir.retval)> t1, TargetFrameIndex:i32<0>, TargetConstant:i32<0>, t0
+
+
+Examining Available:
+Height 13: SU(1): t1: i32 = ADDiu Register:i32 $zero, TargetConstant:i32<0>
+
+
+*** Scheduling [13]: SU(1): t1: i32 = ADDiu Register:i32 $zero, TargetConstant:i32<0>
+
+*** Final schedule ***
+SU(1): t1: i32 = ADDiu Register:i32 $zero, TargetConstant:i32<0>
+
+SU(7): t4: ch = ST<Mem:(store 4 into %ir.retval)> t1, TargetFrameIndex:i32<0>, TargetConstant:i32<0>, t0
+
+SU(8): t22: i32 = LUi TargetConstant:i32<16688>
+
+SU(6): t23: ch = ST<Mem:(store 4 into %ir.a)> t22, TargetFrameIndex:i32<1>, TargetConstant:i32<0>, t4
+
+SU(9): t20: i32 = LUi TargetConstant:i32<16816>
+
+SU(5): t21: ch = ST<Mem:(store 4 into %ir.b)> t20, TargetFrameIndex:i32<2>, TargetConstant:i32<0>, t23
+
+SU(10): t25: i32,ch = LD<Mem:(load 4 from %ir.a)> TargetFrameIndex:i32<1>, TargetConstant:i32<0>, t21
+
+SU(4): t24: i32,ch = LD<Mem:(load 4 from %ir.b)> TargetFrameIndex:i32<2>, TargetConstant:i32<0>, t21
+
+SU(13): t29: i32,ch,glue = ADJCALLSTACKDOWN TargetConstant:i32<8>, TargetConstant:i32<0>, t0
+
+SU(12): t35: i32,ch = LD<Mem:(load 4 from call-entry &__mulsf3)> Register:i32 $gp, TargetExternalSymbol:i32'__mulsf3' [TF=2], t29:1
+
+SU(11): t46: i32,ch,glue = CopyFromReg t45:1, Register:i32 $v0, t45:2
+
+    t37: ch,glue = CopyToReg t29:1, Register:i32 $t9, t35
+
+    t39: ch,glue = CopyToReg t37, Register:i32 $a0, t25, t37:1
+
+    t41: ch,glue = CopyToReg t39, Register:i32 $a1, t24, t39:1
+
+    t42: ch,glue = CopyToReg t41, Register:i32 $gp, Register:i32 $gp, t41:1
+
+    t44: ch,glue = JALR Register:i32 $t9, Register:i32 $a0, Register:i32 $a1, Register:i32 $gp, RegisterMask:Untyped, t29:1, t42:1
+
+    t45: i32,ch,glue = ADJCALLSTACKUP TargetConstant:i32<8>, TargetConstant:i32<0>, t44, t44:1
+
+SU(3): t15: ch = TokenFactor t25:1, t24:1
+
+SU(2): t47: ch = ST<Mem:(store 4 into %ir.c)> t46, TargetFrameIndex:i32<3>, TargetConstant:i32<0>, t15
+
+SU(0): t19: ch = RetLR Register:i32 $v0, t18, t18:1
+
+    t18: ch,glue = CopyToReg t47, Register:i32 $v0, t1
+
+
+Total amount of phi nodes to update: 0
+*** MachineFunction at end of ISel ***
+# Machine code for function main: IsSSA, TracksLiveness
+Frame Objects:
+  fi#-1: size=4, align=8, fixed, at location [SP+8]
+  fi#0: size=4, align=4, at location [SP]
+  fi#1: size=4, align=4, at location [SP]
+  fi#2: size=4, align=4, at location [SP]
+  fi#3: size=4, align=4, at location [SP]
+
+bb.0.entry:
+  %0:gprout = ADDiu $zero, 0
+  ST %0:gprout, %stack.0.retval, 0 :: (store 4 into %ir.retval)
+  %1:gprout = LUi 16688
+  ST killed %1:gprout, %stack.1.a, 0 :: (store 4 into %ir.a)
+  %2:gprout = LUi 16816
+  ST killed %2:gprout, %stack.2.b, 0 :: (store 4 into %ir.b)
+  %3:gprout = LD %stack.1.a, 0 :: (load 4 from %ir.a)
+  %4:gprout = LD %stack.2.b, 0 :: (load 4 from %ir.b)
+  ADJCALLSTACKDOWN 8, 0, implicit-def dead $sp, implicit $sp
+  %5:gprout = LD $gp, target-flags(<unknown>) &__mulsf3 :: (load 4 from call-entry &__mulsf3)
+  $t9 = COPY %5:gprout
+  $a0 = COPY %3:gprout
+  $a1 = COPY %4:gprout
+  JALR $t9, $a0, $a1, $gp, <regmask $fp $lr $s0 $s1>, implicit-def $sp, implicit-def $v0
+  ADJCALLSTACKUP 8, 0, implicit-def dead $sp, implicit $sp
+  %6:gprout = COPY $v0
+  ST %6:gprout, %stack.3.c, 0 :: (store 4 into %ir.c)
+  $v0 = COPY %0:gprout
+  RetLR implicit $v0
+
+# End machine code for function main.
+
+
+Restoring optimization level for Function main
+	Before: -O0 ; After: -O2
+Skipping pass 'Early Tail Duplication' on function main
+Skipping pass 'Optimize machine instruction PHIs' on function main
+# Machine code for function main: IsSSA, TracksLiveness
+Frame Objects:
+  fi#-1: size=4, align=8, fixed, at location [SP+8]
+  fi#0: size=4, align=4, at location [SP]
+  fi#1: size=4, align=4, at location [SP]
+  fi#2: size=4, align=4, at location [SP]
+  fi#3: size=4, align=4, at location [SP]
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  ST %0:gprout, %stack.0.retval, 0 :: (store 4 into %ir.retval)
+48B	  %1:gprout = LUi 16688
+64B	  ST killed %1:gprout, %stack.1.a, 0 :: (store 4 into %ir.a)
+80B	  %2:gprout = LUi 16816
+96B	  ST killed %2:gprout, %stack.2.b, 0 :: (store 4 into %ir.b)
+112B	  %3:gprout = LD %stack.1.a, 0 :: (load 4 from %ir.a)
+128B	  %4:gprout = LD %stack.2.b, 0 :: (load 4 from %ir.b)
+144B	  ADJCALLSTACKDOWN 8, 0, implicit-def dead $sp, implicit $sp
+160B	  %5:gprout = LD $gp, target-flags(<unknown>) &__mulsf3 :: (load 4 from call-entry &__mulsf3)
+176B	  $t9 = COPY %5:gprout
+192B	  $a0 = COPY %3:gprout
+208B	  $a1 = COPY %4:gprout
+224B	  JALR $t9, $a0, $a1, $gp, <regmask $fp $lr $s0 $s1>, implicit-def $sp, implicit-def $v0
+240B	  ADJCALLSTACKUP 8, 0, implicit-def dead $sp, implicit $sp
+256B	  %6:gprout = COPY $v0
+272B	  ST %6:gprout, %stack.3.c, 0 :: (store 4 into %ir.c)
+288B	  $v0 = COPY %0:gprout
+304B	  RetLR implicit $v0
+
+# End machine code for function main.
+
+********** Stack Coloring **********
+********** Function: main
+Found 0 markers and 4 slots
+Slot structure:
+Slot #0 - 4 bytes.
+Slot #1 - 4 bytes.
+Slot #2 - 4 bytes.
+Slot #3 - 4 bytes.
+Total Stack size: 16 bytes
+
+Will not try to merge slots.
+Removed 0 markers.
+Skipping pass 'Remove dead machine instructions' on function main
+
+block-frequency: main
+=====================
+reverse-post-order-traversal
+ - 0: BB0[entry]
+loop-detection
+compute-mass-in-function
+ - node: BB0[entry]
+  => mass:  ffffffffffffffff
+float-to-int: min = 1.0, max = 1.0, factor = 8.0
+ - BB0[entry]: float = 1.0, scaled = 8.0, int = 8
+block-frequency-info: main
+ - BB0[entry]: float = 1.0, int = 8
+
+Skipping pass 'Early Machine Loop Invariant Code Motion' on function main
+
+block-frequency: main
+=====================
+reverse-post-order-traversal
+ - 0: BB0[entry]
+loop-detection
+compute-mass-in-function
+ - node: BB0[entry]
+  => mass:  ffffffffffffffff
+float-to-int: min = 1.0, max = 1.0, factor = 8.0
+ - BB0[entry]: float = 1.0, scaled = 8.0, int = 8
+block-frequency-info: main
+ - BB0[entry]: float = 1.0, int = 8
+
+Skipping pass 'Machine Common Subexpression Elimination' on function main
+		Looking for trivial roots
+Found a new trivial root: %bb.0
+Last visited node: %bb.0
+		Looking for non-trivial roots
+Total: 1, Num: 2
+Discovered CFG nodes:
+0: nullptr
+1: nullptr
+2: %bb.0
+Found roots: %bb.0 
+Skipping pass 'Machine code sinking' on function main
+Skipping pass 'Peephole Optimizations' on function main
+Skipping pass 'Remove dead machine instructions' on function main
+Skipping Detect dead lanes pass
+********** PROCESS IMPLICIT DEFS **********
+********** Function: main
+Skipping pass 'Two-Address instruction pass' on function main
+********** REWRITING TWO-ADDR INSTRS **********
+********** Function: main
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+Frame Objects:
+  fi#-1: size=4, align=8, fixed, at location [SP+8]
+  fi#0: size=4, align=4, at location [SP]
+  fi#1: size=4, align=4, at location [SP]
+  fi#2: size=4, align=4, at location [SP]
+  fi#3: size=4, align=4, at location [SP]
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  ST %0:gprout, %stack.0.retval, 0 :: (store 4 into %ir.retval)
+48B	  %1:gprout = LUi 16688
+64B	  ST killed %1:gprout, %stack.1.a, 0 :: (store 4 into %ir.a)
+80B	  %2:gprout = LUi 16816
+96B	  ST killed %2:gprout, %stack.2.b, 0 :: (store 4 into %ir.b)
+112B	  %3:gprout = LD %stack.1.a, 0 :: (load 4 from %ir.a)
+128B	  %4:gprout = LD %stack.2.b, 0 :: (load 4 from %ir.b)
+144B	  ADJCALLSTACKDOWN 8, 0, implicit-def dead $sp, implicit $sp
+160B	  %5:gprout = LD $gp, target-flags(<unknown>) &__mulsf3 :: (load 4 from call-entry &__mulsf3)
+176B	  $t9 = COPY killed %5:gprout
+192B	  $a0 = COPY killed %3:gprout
+208B	  $a1 = COPY killed %4:gprout
+224B	  JALR killed $t9, killed $a0, killed $a1, $gp, <regmask $fp $lr $s0 $s1>, implicit-def $sp, implicit-def $v0
+240B	  $gp = LD %fixed-stack.0, 0
+256B	  ADJCALLSTACKUP 8, 0, implicit-def dead $sp, implicit $sp
+272B	  %6:gprout = COPY killed $v0
+288B	  ST killed %6:gprout, %stack.3.c, 0 :: (store 4 into %ir.c)
+304B	  $v0 = COPY killed %0:gprout
+320B	  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+Computing live-in reg-units in ABI blocks.
+Created 0 new intervals.
+********** INTERVALS **********
+%0 [16r,304r:0)  0@16r weight:0.000000e+00
+%1 [48r,64r:0)  0@48r weight:0.000000e+00
+%2 [80r,96r:0)  0@80r weight:0.000000e+00
+%3 [112r,192r:0)  0@112r weight:0.000000e+00
+%4 [128r,208r:0)  0@128r weight:0.000000e+00
+%5 [160r,176r:0)  0@160r weight:0.000000e+00
+%6 [272r,288r:0)  0@272r weight:0.000000e+00
+RegMasks: 224r
+********** MACHINEINSTRS **********
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+Frame Objects:
+  fi#-1: size=4, align=8, fixed, at location [SP+8]
+  fi#0: size=4, align=4, at location [SP]
+  fi#1: size=4, align=4, at location [SP]
+  fi#2: size=4, align=4, at location [SP]
+  fi#3: size=4, align=4, at location [SP]
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  ST %0:gprout, %stack.0.retval, 0 :: (store 4 into %ir.retval)
+48B	  %1:gprout = LUi 16688
+64B	  ST %1:gprout, %stack.1.a, 0 :: (store 4 into %ir.a)
+80B	  %2:gprout = LUi 16816
+96B	  ST %2:gprout, %stack.2.b, 0 :: (store 4 into %ir.b)
+112B	  %3:gprout = LD %stack.1.a, 0 :: (load 4 from %ir.a)
+128B	  %4:gprout = LD %stack.2.b, 0 :: (load 4 from %ir.b)
+144B	  ADJCALLSTACKDOWN 8, 0, implicit-def dead $sp, implicit $sp
+160B	  %5:gprout = LD $gp, target-flags(<unknown>) &__mulsf3 :: (load 4 from call-entry &__mulsf3)
+176B	  $t9 = COPY %5:gprout
+192B	  $a0 = COPY %3:gprout
+208B	  $a1 = COPY %4:gprout
+224B	  JALR killed $t9, killed $a0, killed $a1, $gp, <regmask $fp $lr $s0 $s1>, implicit-def $sp, implicit-def $v0
+240B	  $gp = LD %fixed-stack.0, 0
+256B	  ADJCALLSTACKUP 8, 0, implicit-def dead $sp, implicit $sp
+272B	  %6:gprout = COPY killed $v0
+288B	  ST %6:gprout, %stack.3.c, 0 :: (store 4 into %ir.c)
+304B	  $v0 = COPY %0:gprout
+320B	  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+********** SIMPLE REGISTER COALESCING **********
+********** Function: main
+********** JOINING INTERVALS ***********
+entry:
+176B	$t9 = COPY %5:gprout
+	Considering merging %5 with $t9
+	Can only merge into reserved registers.
+192B	$a0 = COPY %3:gprout
+	Considering merging %3 with $a0
+	Can only merge into reserved registers.
+208B	$a1 = COPY %4:gprout
+	Considering merging %4 with $a1
+	Can only merge into reserved registers.
+272B	%6:gprout = COPY killed $v0
+	Considering merging %6 with $v0
+	Can only merge into reserved registers.
+304B	$v0 = COPY %0:gprout
+	Considering merging %0 with $v0
+	Can only merge into reserved registers.
+Trying to inflate 0 regs.
+********** INTERVALS **********
+%0 [16r,304r:0)  0@16r weight:0.000000e+00
+%1 [48r,64r:0)  0@48r weight:0.000000e+00
+%2 [80r,96r:0)  0@80r weight:0.000000e+00
+%3 [112r,192r:0)  0@112r weight:0.000000e+00
+%4 [128r,208r:0)  0@128r weight:0.000000e+00
+%5 [160r,176r:0)  0@160r weight:0.000000e+00
+%6 [272r,288r:0)  0@272r weight:0.000000e+00
+RegMasks: 224r
+********** MACHINEINSTRS **********
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+Frame Objects:
+  fi#-1: size=4, align=8, fixed, at location [SP+8]
+  fi#0: size=4, align=4, at location [SP]
+  fi#1: size=4, align=4, at location [SP]
+  fi#2: size=4, align=4, at location [SP]
+  fi#3: size=4, align=4, at location [SP]
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  ST %0:gprout, %stack.0.retval, 0 :: (store 4 into %ir.retval)
+48B	  %1:gprout = LUi 16688
+64B	  ST %1:gprout, %stack.1.a, 0 :: (store 4 into %ir.a)
+80B	  %2:gprout = LUi 16816
+96B	  ST %2:gprout, %stack.2.b, 0 :: (store 4 into %ir.b)
+112B	  %3:gprout = LD %stack.1.a, 0 :: (load 4 from %ir.a)
+128B	  %4:gprout = LD %stack.2.b, 0 :: (load 4 from %ir.b)
+144B	  ADJCALLSTACKDOWN 8, 0, implicit-def dead $sp, implicit $sp
+160B	  %5:gprout = LD $gp, target-flags(<unknown>) &__mulsf3 :: (load 4 from call-entry &__mulsf3)
+176B	  $t9 = COPY %5:gprout
+192B	  $a0 = COPY %3:gprout
+208B	  $a1 = COPY %4:gprout
+224B	  JALR killed $t9, killed $a0, killed $a1, $gp, <regmask $fp $lr $s0 $s1>, implicit-def $sp, implicit-def $v0
+240B	  $gp = LD %fixed-stack.0, 0
+256B	  ADJCALLSTACKUP 8, 0, implicit-def dead $sp, implicit $sp
+272B	  %6:gprout = COPY killed $v0
+288B	  ST %6:gprout, %stack.3.c, 0 :: (store 4 into %ir.c)
+304B	  $v0 = COPY %0:gprout
+320B	  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+Skipping pass 'Machine Instruction Scheduler' on function main
+
+block-frequency: main
+=====================
+reverse-post-order-traversal
+ - 0: BB0[entry]
+loop-detection
+compute-mass-in-function
+ - node: BB0[entry]
+  => mass:  ffffffffffffffff
+float-to-int: min = 1.0, max = 1.0, factor = 8.0
+ - BB0[entry]: float = 1.0, scaled = 8.0, int = 8
+block-frequency-info: main
+ - BB0[entry]: float = 1.0, int = 8
+
+********** GREEDY REGISTER ALLOCATION **********
+********** Function: main
+********** Compute Spill Weights **********
+********** Function: main
+********** INTERVALS **********
+%0 [16r,304r:0)  0@16r weight:2.202035e-03
+%1 [48r,64r:0)  0@48r weight:INF
+%2 [80r,96r:0)  0@80r weight:INF
+%3 [112r,192r:0)  0@112r weight:4.208333e-03
+%4 [128r,208r:0)  0@128r weight:4.208333e-03
+%5 [160r,176r:0)  0@160r weight:INF
+%6 [272r,288r:0)  0@272r weight:INF
+RegMasks: 224r
+********** MACHINEINSTRS **********
+# Machine code for function main: NoPHIs, TracksLiveness, TiedOpsRewritten
+Frame Objects:
+  fi#-1: size=4, align=8, fixed, at location [SP+8]
+  fi#0: size=4, align=4, at location [SP]
+  fi#1: size=4, align=4, at location [SP]
+  fi#2: size=4, align=4, at location [SP]
+  fi#3: size=4, align=4, at location [SP]
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  ST %0:gprout, %stack.0.retval, 0 :: (store 4 into %ir.retval)
+48B	  %1:gprout = LUi 16688
+64B	  ST %1:gprout, %stack.1.a, 0 :: (store 4 into %ir.a)
+80B	  %2:gprout = LUi 16816
+96B	  ST %2:gprout, %stack.2.b, 0 :: (store 4 into %ir.b)
+112B	  %3:gprout = LD %stack.1.a, 0 :: (load 4 from %ir.a)
+128B	  %4:gprout = LD %stack.2.b, 0 :: (load 4 from %ir.b)
+144B	  ADJCALLSTACKDOWN 8, 0, implicit-def dead $sp, implicit $sp
+160B	  %5:gprout = LD $gp, target-flags(<unknown>) &__mulsf3 :: (load 4 from call-entry &__mulsf3)
+176B	  $t9 = COPY %5:gprout
+192B	  $a0 = COPY %3:gprout
+208B	  $a1 = COPY %4:gprout
+224B	  JALR killed $t9, killed $a0, killed $a1, $gp, <regmask $fp $lr $s0 $s1>, implicit-def $sp, implicit-def $v0
+240B	  $gp = LD %fixed-stack.0, 0
+256B	  ADJCALLSTACKUP 8, 0, implicit-def dead $sp, implicit $sp
+272B	  %6:gprout = COPY killed $v0
+288B	  ST %6:gprout, %stack.3.c, 0 :: (store 4 into %ir.c)
+304B	  $v0 = COPY %0:gprout
+320B	  RetLR implicit killed $v0
+
+# End machine code for function main.
+
+
+selectOrSplit GPROut:%0 [16r,304r:0)  0@16r weight:2.202035e-03 w=2.202035e-03
+AllocationOrder(GPROut) = [ $v0 $v1 $a0 $a1 $t9 $t0 $t1 $s0 $s1 ]
+hints: $v0
+missed hint $v0
+assigning %0 to $s0: S0 [16r,304r:0)  0@16r
+
+selectOrSplit GPROut:%3 [112r,192r:0)  0@112r weight:4.208333e-03 w=4.208333e-03
+hints: $a0
+assigning %3 to $a0: A0 [112r,192r:0)  0@112r
+
+selectOrSplit GPROut:%4 [128r,208r:0)  0@128r weight:4.208333e-03 w=4.208333e-03
+hints: $a1
+assigning %4 to $a1: A1 [128r,208r:0)  0@128r
+
+selectOrSplit GPROut:%5 [160r,176r:0)  0@160r weight:INF w=INF
+hints: $t9
+assigning %5 to $t9: T9 [160r,176r:0)  0@160r
+
+selectOrSplit GPROut:%6 [272r,288r:0)  0@272r weight:INF w=INF
+hints: $v0
+assigning %6 to $v0: V0 [272r,288r:0)  0@272r
+
+selectOrSplit GPROut:%1 [48r,64r:0)  0@48r weight:INF w=INF
+assigning %1 to $v0: V0 [48r,64r:0)  0@48r
+
+selectOrSplit GPROut:%2 [80r,96r:0)  0@80r weight:INF w=INF
+assigning %2 to $v0: V0 [80r,96r:0)  0@80r
+Trying to reconcile hints for: %0($s0)
+%0($s0) is recolorable.
+********** REWRITE VIRTUAL REGISTERS **********
+********** Function: main
+********** REGISTER MAP **********
+[%0 -> $s0] GPROut
+[%1 -> $v0] GPROut
+[%2 -> $v0] GPROut
+[%3 -> $a0] GPROut
+[%4 -> $a1] GPROut
+[%5 -> $t9] GPROut
+[%6 -> $v0] GPROut
+
+0B	bb.0.entry:
+16B	  %0:gprout = ADDiu $zero, 0
+32B	  ST %0:gprout, %stack.0.retval, 0 :: (store 4 into %ir.retval)
+48B	  %1:gprout = LUi 16688
+64B	  ST killed %1:gprout, %stack.1.a, 0 :: (store 4 into %ir.a)
+80B	  %2:gprout = LUi 16816
+96B	  ST killed %2:gprout, %stack.2.b, 0 :: (store 4 into %ir.b)
+112B	  %3:gprout = LD %stack.1.a, 0 :: (load 4 from %ir.a)
+128B	  %4:gprout = LD %stack.2.b, 0 :: (load 4 from %ir.b)
+144B	  ADJCALLSTACKDOWN 8, 0, implicit-def dead $sp, implicit $sp
+160B	  %5:gprout = LD $gp, target-flags(<unknown>) &__mulsf3 :: (load 4 from call-entry &__mulsf3)
+176B	  $t9 = COPY killed %5:gprout
+192B	  $a0 = COPY killed %3:gprout
+208B	  $a1 = COPY killed %4:gprout
+224B	  JALR $t9, $a0, $a1, $gp, <regmask $fp $lr $s0 $s1>, implicit-def $sp, implicit-def $v0
+240B	  $gp = LD %fixed-stack.0, 0
+256B	  ADJCALLSTACKUP 8, 0, implicit-def dead $sp, implicit $sp
+272B	  %6:gprout = COPY $v0
+288B	  ST killed %6:gprout, %stack.3.c, 0 :: (store 4 into %ir.c)
+304B	  $v0 = COPY killed %0:gprout
+320B	  RetLR implicit $v0
+> $s0 = ADDiu $zero, 0
+> ST $s0, %stack.0.retval, 0 :: (store 4 into %ir.retval)
+> $v0 = LUi 16688
+> ST killed $v0, %stack.1.a, 0 :: (store 4 into %ir.a)
+> $v0 = LUi 16816
+> ST killed $v0, %stack.2.b, 0 :: (store 4 into %ir.b)
+> $a0 = LD %stack.1.a, 0 :: (load 4 from %ir.a)
+> $a1 = LD %stack.2.b, 0 :: (load 4 from %ir.b)
+> ADJCALLSTACKDOWN 8, 0, implicit-def dead $sp, implicit $sp
+> $t9 = LD $gp, target-flags(<unknown>) &__mulsf3 :: (load 4 from call-entry &__mulsf3)
+> $t9 = COPY killed $t9
+Identity copy: $t9 = COPY killed $t9
+  deleted.
+> $a0 = COPY killed $a0
+Identity copy: $a0 = COPY killed $a0
+  deleted.
+> $a1 = COPY killed $a1
+Identity copy: $a1 = COPY killed $a1
+  deleted.
+> JALR $t9, $a0, $a1, $gp, <regmask $fp $lr $s0 $s1>, implicit-def $sp, implicit-def $v0
+> $gp = LD %fixed-stack.0, 0
+> ADJCALLSTACKUP 8, 0, implicit-def dead $sp, implicit $sp
+> $v0 = COPY $v0
+Identity copy: $v0 = COPY $v0
+  deleted.
+> ST killed $v0, %stack.3.c, 0 :: (store 4 into %ir.c)
+> $v0 = COPY killed $s0
+> RetLR implicit $v0
+********** Stack Slot Coloring **********
+********** Function: main
+Skipping pass 'Stack Slot Coloring' on function main
+Skipping pass 'Machine Copy Propagation Pass' on function main

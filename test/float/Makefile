@@ -26,3 +26,6 @@ MIPS:
 	 --ex "b MachineFrameInfo::print" \
 	--args ../../build/bin/llc -march=mips -debug -relocation-model=pic -filetype=asm outputs/fma.ll -o outputs/fma-mips.s
 # MIPS online pipline analysis https://godbolt.org/z/qYKx56eh6
+
+test:
+	../../build/bin/llc -debug-pass=Structure -stop-after=machine-cp -march=cpu0 -debug -relocation-model=pic -filetype=asm outputs/fma.ll -o -
