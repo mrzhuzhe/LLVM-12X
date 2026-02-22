@@ -18,12 +18,11 @@ goldenfunction:
 	llc -march=x86 -O0 -filetype=asm outputs/comparefunction.ll -o outputs/goldenfunction.s
 
 debug:
-	gdb --ex "b Cpu0DAGToDAGISel::Select" \
-	gdb --ex "b LegalizeFloatTypes.cpp:801" \
-	gdb --ex "b LegalizeFloatTypes.cpp:49" \
+	gdb --ex "b MachineFrameInfo::print" \
 	--args ../../build/bin/llc -march=cpu0 -debug -relocation-model=pic -filetype=asm outputs/fma.ll -o outputs/fma.s
 
 MIPS:
 	gdb --ex "b MipsFastISel::selectLoad" \
+	 --ex "b MachineFrameInfo::print" \
 	--args ../../build/bin/llc -march=mips -debug -relocation-model=pic -filetype=asm outputs/fma.ll -o outputs/fma-mips.s
 # MIPS online pipline analysis https://godbolt.org/z/qYKx56eh6

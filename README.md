@@ -49,4 +49,6 @@ cmake -DCMAKE_BUILD_TYPE=Debug --install-prefix $PWD/../install/llvm12-Cpu0 -DCM
 5. tablegen return
 6. support double / float , mips use fast-isel
   reffer: https://inside-compiler.github.io/
-
+如果要支持 float 那么 dag2dag 时就要做对应的处理，而非在insselect中处理
+mips走的是fast-isel
+fast-isel can be switch to selectionDag
