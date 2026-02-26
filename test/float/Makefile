@@ -35,5 +35,5 @@ testMIR:
 testLegalize:
 	../../build/bin/llc \
 	--view-legalize-dags \
-	-debug \
+	-debug-only=isel \
 	-march=cpu0 -relocation-model=pic -filetype=asm outputs/fma.ll -o -
