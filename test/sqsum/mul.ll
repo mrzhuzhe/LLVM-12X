@@ -15,7 +15,7 @@ entry:
   store i32 22, i32* %b, align 4
   %0 = load i32, i32* %a, align 4
   %1 = load i32, i32* %b, align 4
-  %mul = sqsum i32 %0, %1
+  %mul = mul nsw i32 %0, %1
   store i32 %mul, i32* %c, align 4
   ret i32 0
 }
