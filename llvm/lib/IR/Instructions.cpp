@@ -2456,7 +2456,7 @@ void BinaryOperator::AssertOK() {
 #ifndef NDEBUG
   switch (getOpcode()) {
   case Add: case Sub:
-  case Mul:
+  case Mul: case Sqsum:
     assert(getType() == LHS->getType() &&
            "Arithmetic operation should return same type as operands!");
     assert(getType()->isIntOrIntVectorTy() &&

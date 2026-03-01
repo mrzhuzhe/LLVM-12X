@@ -3394,6 +3394,7 @@ void Verifier::visitBinaryOperator(BinaryOperator &B) {
   case Instruction::Add:
   case Instruction::Sub:
   case Instruction::Mul:
+  case Instruction::Sqsum:
   case Instruction::SDiv:
   case Instruction::UDiv:
   case Instruction::SRem:

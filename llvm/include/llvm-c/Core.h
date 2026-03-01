@@ -83,6 +83,8 @@ typedef enum {
   LLVMSRem           = 18,
   LLVMFRem           = 19,
 
+  LLVMSqsum          = 69,
+  
   /* Logical Operators */
   LLVMShl            = 20,
   LLVMLShr           = 21,

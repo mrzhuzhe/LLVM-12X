@@ -12,6 +12,7 @@
 //===----------------------------------------------------------------------===//
 def ALU     : FuncUnit;
 def IMULDIV : FuncUnit;
+def ISQSUM  : FuncUnit;
 
 //===----------------------------------------------------------------------===//
 // Instruction Itinerary classes used for Cpu0
@@ -27,12 +28,13 @@ def IIIdiv             : InstrItinClass;
 def IIBranch           : InstrItinClass;
 
 def IIPseudo           : InstrItinClass;
+def IIsqsum            : InstrItinClass;
 
 //===----------------------------------------------------------------------===//
 // Cpu0 Generic instruction itineraries.
 //===----------------------------------------------------------------------===//
 //@ http://llvm.org/docs/doxygen/html/structllvm_1_1InstrStage.html
-def Cpu0GenericItineraries : ProcessorItineraries<[ALU, IMULDIV], [], [
+def Cpu0GenericItineraries : ProcessorItineraries<[ALU, IMULDIV, ISQSUM], [], [
 //@2
   InstrItinData<IIAlu              , [InstrStage<1,  [ALU]>]>,
   InstrItinData<II_CLO             , [InstrStage<1,  [ALU]>]>,
@@ -42,6 +44,7 @@ def Cpu0GenericItineraries : ProcessorItineraries<[ALU, IMULDIV], [], [
   InstrItinData<IIHiLo             , [InstrStage<1,  [IMULDIV]>]>,
   InstrItinData<IIImul             , [InstrStage<17, [IMULDIV]>]>,
   InstrItinData<IIIdiv             , [InstrStage<38, [IMULDIV]>]>,
-  InstrItinData<IIBranch           , [InstrStage<1,  [ALU]>]>
+  InstrItinData<IIBranch           , [InstrStage<1,  [ALU]>]>,
+  InstrItinData<IIsqsum            , [InstrStage<16, [ISQSUM]>]>
 ]>;
 

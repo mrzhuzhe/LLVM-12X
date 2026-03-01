@@ -687,6 +687,7 @@ private:
   void visitSub(const User &I)  { visitBinary(I, ISD::SUB); }
   void visitFSub(const User &I) { visitBinary(I, ISD::FSUB); }
   void visitMul(const User &I)  { visitBinary(I, ISD::MUL); }
+  void visitSqsum(const User &I)  { visitBinary(I, ISD::SQSUM); }
   void visitFMul(const User &I) { visitBinary(I, ISD::FMUL); }
   void visitURem(const User &I) { visitBinary(I, ISD::UREM); }
   void visitSRem(const User &I) { visitBinary(I, ISD::SREM); }
