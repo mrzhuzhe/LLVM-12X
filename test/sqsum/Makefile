@@ -1,15 +1,21 @@
 .PHONY: all test golden debug comapre
-all:
+baseline:
 	../../build/bin/llc -march=cpu0 -relocation-model=pic \
+	-debug-only=isel \
+	-filetype=asm mul.ll -o outputs/mul.s
+
+baseline-debug:
+	gdb \
+	--ex "b FastISel::selectOperator" \
+	--args ../../build/bin/llc -march=cpu0 -relocation-model=pic \
 	--view-legalize-dags \
 	-debug-only=isel \
 	-stop-after=finalize-isel \
 	-filetype=asm mul.ll -o outputs/mul.s
+
 test:
 	../../build/bin/llc -march=cpu0 -relocation-model=pic \
-	--view-legalize-dags \
 	-debug-only=isel \
-	-stop-after=finalize-isel \
 	-filetype=asm sqsum.ll -o outputs/sqsum.s
 
 # --ex="b BinaryOperator::AssertOK" \
@@ -18,9 +24,9 @@ test:
 
 debug:
 	gdb \
-	--ex "b LLParser.cpp:6084" \
+	--ex "b SelectionDAGISel::CannotYetSelect" \
 	--args ../../build/bin/llc -march=cpu0 -relocation-model=pic \
-	-view-legalize-dags \
+	--view-legalize-dags \
 	-debug \
 	-stop-after=finalize-isel \
 	-filetype=asm sqsum.ll -o outputs/sqsum.s
