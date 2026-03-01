@@ -420,6 +420,9 @@ private:
   bool translateMul(const User &U, MachineIRBuilder &MIRBuilder) {
     return translateBinaryOp(TargetOpcode::G_MUL, U, MIRBuilder);
   }
+  bool translateSqsum(const User &U, MachineIRBuilder &MIRBuilder) {
+    return translateBinaryOp(TargetOpcode::G_SQSUM, U, MIRBuilder);
+  }
   bool translateOr(const User &U, MachineIRBuilder &MIRBuilder) {
     return translateBinaryOp(TargetOpcode::G_OR, U, MIRBuilder);
   }

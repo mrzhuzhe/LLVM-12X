@@ -361,6 +361,10 @@ def add        : SDNode<"ISD::ADD"       , SDTIntBinOp   ,
 def sub        : SDNode<"ISD::SUB"       , SDTIntBinOp>;
 def mul        : SDNode<"ISD::MUL"       , SDTIntBinOp,
                         [SDNPCommutative, SDNPAssociative]>;
+
+def sqsum        : SDNode<"ISD::SQSUM"       , SDTIntBinOp,
+                        [SDNPCommutative, SDNPAssociative]>;
+
 def mulhs      : SDNode<"ISD::MULHS"     , SDTIntBinOp, [SDNPCommutative]>;
 def mulhu      : SDNode<"ISD::MULHU"     , SDTIntBinOp, [SDNPCommutative]>;
 def smullohi   : SDNode<"ISD::SMUL_LOHI" , SDTIntBinHiLoOp, [SDNPCommutative]>;

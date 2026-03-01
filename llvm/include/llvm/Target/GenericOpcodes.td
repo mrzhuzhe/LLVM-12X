@@ -253,6 +253,14 @@ def G_MUL : GenericInstruction {
   let isCommutable = true;
 }
 
+// Generic multiplication.
+def G_SQSUM : GenericInstruction {
+  let OutOperandList = (outs type0:$dst);
+  let InOperandList = (ins type0:$src1, type0:$src2);
+  let hasSideEffects = false;
+  let isCommutable = true;
+}
+
 // Generic signed division.
 def G_SDIV : GenericInstruction {
   let OutOperandList = (outs type0:$dst);

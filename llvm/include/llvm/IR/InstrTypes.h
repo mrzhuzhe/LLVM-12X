@@ -360,6 +360,10 @@ public:
   DEFINE_HELPERS(Sub, NUW) // CreateNUWSub
   DEFINE_HELPERS(Mul, NSW) // CreateNSWMul
   DEFINE_HELPERS(Mul, NUW) // CreateNUWMul
+  
+  DEFINE_HELPERS(Sqsum, NSW) // CreateNSSqsum
+  DEFINE_HELPERS(Sqsum, NUW) // CreateNUSqsum
+
   DEFINE_HELPERS(Shl, NSW) // CreateNSWShl
   DEFINE_HELPERS(Shl, NUW) // CreateNUWShl
 

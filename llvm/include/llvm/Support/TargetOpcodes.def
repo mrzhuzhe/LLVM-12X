@@ -223,6 +223,9 @@ HANDLE_TARGET_OPCODE(G_SUB)
 // Generic multiply instruction.
 HANDLE_TARGET_OPCODE(G_MUL)
 
+// Generic square sum instruction.
+HANDLE_TARGET_OPCODE(G_SQSUM)
+
 // Generic signed division instruction.
 HANDLE_TARGET_OPCODE(G_SDIV)
 

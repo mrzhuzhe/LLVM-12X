@@ -295,6 +295,7 @@ enum Kind {
   kw_sub,
   kw_fsub,
   kw_mul,
+  kw_sqsum,
   kw_fmul,
   kw_udiv,
   kw_sdiv,
